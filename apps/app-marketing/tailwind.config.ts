@@ -1,5 +1,5 @@
 import type {Config} from 'tailwindcss'
-import baseConfig from "@breeze/tailwind-config";
+import baseConfig from "@repo/tailwind-config";
 
 
 const config: Config = {

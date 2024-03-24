@@ -1,19 +1,18 @@
 {
     "extends": "@repo/typescript-config/nextjs.json",
     "compilerOptions": {
+        "baseUrl": ".",
         "plugins": [
             {
                 "name": "next"
             }
-        ]
-    },
-    "paths": {
-        "@/*": [
-            "./*"
         ],
-        "contentlayer/generated": [
-            "./.contentlayer/generated"
-        ]
+        "paths": {
+            "@/*": ["*"],
+            "contentlayer/generated": [
+                "./.contentlayer/generated"
+            ]
+        }
     },
     "include": [
         "next-env.d.ts",

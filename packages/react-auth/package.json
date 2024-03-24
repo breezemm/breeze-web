@@ -1,40 +1,33 @@
 {
-  "name": "@breeze/react-auth",
-  "version": "0.0.1",
-  "private": true,
-  "main": "src/index.tsx",
-  "types": "src/index.ts",
-  "module": "src/index.ts",
-  "scripts": {
-    "clean": "git clean -xdf .turbo node_modules",
-    "format": "prettier --check \"**/*.{ts,tsx}\"",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@tanstack/react-query": "^5.22.2",
-    "react": "^18.2.0",
-    "eslint": "^8.56.0"
-  },
-  "devDependencies": {
-    "@breeze/eslint-config": "workspace:*",
-    "@breeze/tsconfig": "workspace:*"
-  },
-  "eslintConfig": {
-    "root": true,
-    "extends": [
-      "@breeze/eslint-config/base",
-      "@breeze/eslint-config/react"
-    ]
-  },
-  "exports": {
-    ".": "./src/index.tsx"
-  },
-  "typesVersions": {
-    "*": {
-      "*": [
-        "src/*"
-      ]
+    "name": "@breeze/react-auth",
+    "version": "0.0.1",
+    "private": true,
+    "main": "src/index.tsx",
+    "types": "src/index.ts",
+    "module": "src/index.ts",
+    "scripts": {
+        "clean": "git clean -xdf .turbo node_modules",
+        "format": "prettier --check \"**/*.{ts,tsx}\"",
+        "lint": "eslint .",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@tanstack/react-query": "^5.22.2",
+        "react": "^18.2.0",
+        "eslint": "^8.56.0"
+    },
+    "devDependencies": {
+        "@repo/eslint-config": "workspace:*",
+        "@repo/typescript-config": "workspace:*"
+    },
+    "exports": {
+        ".": "./src/index.tsx"
+    },
+    "typesVersions": {
+        "*": {
+            "*": [
+                "src/*"
+            ]
+        }
     }
-  }
 }
