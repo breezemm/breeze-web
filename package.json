@@ -1,5 +1,5 @@
 {
-  "name": "breeze-turbo",
+  "name": "breeze",
   "private": true,
   "scripts": {
     "build": "turbo build",
