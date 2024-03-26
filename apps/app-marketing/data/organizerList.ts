@@ -1,3 +1,5 @@
+import {ListInterface} from "@/interfaces/List";
+
 export const organizerList: ListInterface[] = [
   {
     id: 1,

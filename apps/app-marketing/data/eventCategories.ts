@@ -1,3 +1,5 @@
+import {EventCategoryInterface} from "@/interfaces/EventCategory";
+
 export const eventCategories: EventCategoryInterface[] = [
   {
     id: 1,
