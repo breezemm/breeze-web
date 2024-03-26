@@ -1,13 +1,20 @@
-import {SVGProps} from 'react';
+import { SVGProps } from "react";
 
-const LogoutIcon = ({...props}: SVGProps<SVGSVGElement>) => {
+const LogoutIcon = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
       <path
         d="M5.30773 20.5C4.8026 20.5 4.37503 20.325 4.02503 19.975C3.67503 19.625 3.50003 19.1974 3.50003 18.6923V5.3077C3.50003 4.80257 3.67503 4.375 4.02503 4.025C4.37503 3.675 4.8026 3.5 5.30773 3.5H12.0096V4.99998H5.30773C5.2308 4.99998 5.16027 5.03203 5.09616 5.09613C5.03206 5.16024 5.00001 5.23077 5.00001 5.3077V18.6923C5.00001 18.7692 5.03206 18.8397 5.09616 18.9038C5.16027 18.9679 5.2308 19 5.30773 19H12.0096V20.5H5.30773ZM16.2308 16.2692L15.1924 15.1846L17.627 12.75H9.09616V11.25H17.627L15.1924 8.81538L16.2308 7.7308L20.5 12L16.2308 16.2692Z"
-        fill="currentColor"/>
+        fill="currentColor"
+      />
     </svg>
-
   );
 };
 

@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
 export interface StorageLike {
   getItem(key: string): string | null;
@@ -7,7 +7,6 @@ export interface StorageLike {
 
   removeItem(key: string): void;
 }
-
 
 export const creatCookieStorage = (prefix: string): StorageLike => {
   return {
@@ -19,9 +18,9 @@ export const creatCookieStorage = (prefix: string): StorageLike => {
     },
     removeItem(key: string) {
       return Cookies.remove(`${prefix}:${key}`);
-    }
-  }
-}
+    },
+  };
+};
 
 export const createLocalStorage = (): StorageLike => {
   return {
@@ -34,10 +33,9 @@ export const createLocalStorage = (): StorageLike => {
     },
     removeItem(key: string) {
       return localStorage.removeItem(key);
-    }
-  }
-}
-
+    },
+  };
+};
 
 export interface TokenStorage {
   getToken(): string | null;
@@ -47,7 +45,10 @@ export interface TokenStorage {
   clearToken(): void;
 }
 
-export const createTokenStorage = (storage: StorageLike, key: string): TokenStorage => {
+export const createTokenStorage = (
+  storage: StorageLike,
+  key: string,
+): TokenStorage => {
   return {
     getToken() {
       return storage.getItem(key);
@@ -57,8 +58,11 @@ export const createTokenStorage = (storage: StorageLike, key: string): TokenStor
     },
     clearToken() {
       storage.removeItem(key);
-    }
-  }
-}
+    },
+  };
+};
 
-export const tokenStorage = createTokenStorage(creatCookieStorage('breeze'), 'token');
+export const tokenStorage = createTokenStorage(
+  creatCookieStorage("breeze"),
+  "token",
+);

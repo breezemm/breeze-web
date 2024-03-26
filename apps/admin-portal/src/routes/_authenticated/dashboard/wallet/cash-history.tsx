@@ -1,22 +1,28 @@
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@breeze/ui'
-import { Link, createFileRoute } from '@tanstack/react-router'
-import WalletIcon from '~/assets/icons/WalletIcon'
-import CashHistryDataTable from './-components/cash-table/data-table'
-import { columns } from './-components/cash-table/columns'
-import { cash_history_data } from './-components/cash-history-data'
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@breeze/ui";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import WalletIcon from "~/assets/icons/WalletIcon";
+import CashHistryDataTable from "./-components/cash-table/data-table";
+import { columns } from "./-components/cash-table/columns";
+import { cash_history_data } from "./-components/cash-history-data";
 
-
-export const Route = createFileRoute('/_authenticated/dashboard/wallet/cash-history')({
+export const Route = createFileRoute(
+  "/_authenticated/dashboard/wallet/cash-history",
+)({
   component: CashHistory,
-})
+});
 
-function CashHistory () {
-
-
-    return (
-      <>
-        <div>
-          {/* Navi bar for Wallet > cash history */}
+function CashHistory() {
+  return (
+    <>
+      <div>
+        {/* Navi bar for Wallet > cash history */}
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -28,17 +34,17 @@ function CashHistory () {
                 </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator  />
+            <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbPage>Cash History</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        </div>
-        <div>
+      </div>
+      <div>
         <h1>Hi this is Cash History!!</h1>
-        <CashHistryDataTable columns={columns} data={cash_history_data} / >
-        </div>
-        </>
-    )
+        <CashHistryDataTable columns={columns} data={cash_history_data} />
+      </div>
+    </>
+  );
 }

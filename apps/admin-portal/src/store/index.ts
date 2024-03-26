@@ -1,4 +1,4 @@
-import {Store} from "@tanstack/store";
+import { Store } from "@tanstack/store";
 
 export interface User {
   name: string;
@@ -11,4 +11,4 @@ interface State {
 
 export const authStore = new Store<State>({
   user: undefined,
-})
+});

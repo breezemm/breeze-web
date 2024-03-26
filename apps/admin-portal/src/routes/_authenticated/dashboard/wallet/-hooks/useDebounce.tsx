@@ -1,16 +1,16 @@
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from "react";
 
-export default function useDebounce<T> (searchInputValue: T, delay: number) {
-  const [debounceValue, setDebounceValue ] = useState<T>(searchInputValue)
+export default function useDebounce<T>(searchInputValue: T, delay: number) {
+  const [debounceValue, setDebounceValue] = useState<T>(searchInputValue);
 
-  useEffect (() => {
+  useEffect(() => {
     const handler = setTimeout(() => {
-      setDebounceValue(searchInputValue)
-    }, delay)
+      setDebounceValue(searchInputValue);
+    }, delay);
 
     return () => {
-      clearTimeout(handler)
-    }
-  }, [searchInputValue, delay]) 
-  return debounceValue
+      clearTimeout(handler);
+    };
+  }, [searchInputValue, delay]);
+  return debounceValue;
 }

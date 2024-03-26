@@ -1,11 +1,11 @@
-import { eventCategories } from '@/data/eventCategories'
-import CelebrateIcon from '@/icons/CelebrateIcon'
-import MyanmarFlagIcon from '@/icons/MyanmarFlagIcon'
-import SearchIcon from '@/icons/SearchIcon'
-import React from 'react'
-import { MdOutlineFileDownload } from 'react-icons/md'
-import EventCategory from './EventCategory'
-import {EventCategoryInterface} from "@/interfaces/EventCategory";
+import { eventCategories } from "@/data/eventCategories";
+import CelebrateIcon from "@/icons/CelebrateIcon";
+import MyanmarFlagIcon from "@/icons/MyanmarFlagIcon";
+import SearchIcon from "@/icons/SearchIcon";
+import React from "react";
+import { MdOutlineFileDownload } from "react-icons/md";
+import EventCategory from "./EventCategory";
+import { EventCategoryInterface } from "@/interfaces/EventCategory";
 
 const HeroSection = () => {
   return (
@@ -24,11 +24,16 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="mb-6">
-            <h3 className="mb-4 text-3xl font-bold">Get your account in 3 mins !</h3>
+            <h3 className="mb-4 text-3xl font-bold">
+              Get your account in 3 mins !
+            </h3>
             <p className="mb-4">Only in 3 mins. For Real. No Cap.</p>
           </div>
           <div className="relative mb-4">
-            <a href="#" className="bg-primary text-neutral-1 block w-full rounded-md py-3 text-center">
+            <a
+              href="#"
+              className="bg-primary text-neutral-1 block w-full rounded-md py-3 text-center"
+            >
               <div className="flex items-center justify-center gap-4 text-sm">
                 <MdOutlineFileDownload size={20} />
                 <p>Download App</p>
@@ -45,12 +50,17 @@ const HeroSection = () => {
         </div>
         <div className="col-span-full grid grid-cols-3 gap-y-6 lg:col-span-1">
           {eventCategories.map((eventCategory: EventCategoryInterface) => {
-            return <EventCategory key={eventCategory?.id} eventCategory={eventCategory} />
+            return (
+              <EventCategory
+                key={eventCategory?.id}
+                eventCategory={eventCategory}
+              />
+            );
           })}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
