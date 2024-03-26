@@ -1,3 +1,5 @@
+import {IconPropsInterface} from "@/interfaces/IconProps";
+
 const MyanmarFlagIcon = ({ width = '25', height = '25' }: IconPropsInterface) => {
   return (
     <svg

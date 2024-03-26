@@ -1,3 +1,5 @@
+import {IconPropsInterface} from "@/interfaces/IconProps";
+
 const MusicIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
   return (
     <svg

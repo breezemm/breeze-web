@@ -1,3 +1,5 @@
+import {ListInterface} from "@/interfaces/List";
+
 export const customerList: ListInterface[] = [
   {
     id: 1,

@@ -5,6 +5,7 @@ import SearchIcon from '@/icons/SearchIcon'
 import React from 'react'
 import { MdOutlineFileDownload } from 'react-icons/md'
 import EventCategory from './EventCategory'
+import {EventCategoryInterface} from "@/interfaces/EventCategory";
 
 const HeroSection = () => {
   return (
