@@ -2,7 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import DownloadButton from '@/components/DownloadButton'
-import BreezeLogoIcon from '@/app/assets/BreezeLogoIcon'
+import BreezeLogoIcon from '@/app/assets/icons/BreezeLogoIcon'
 import TimelineNavbar from "@/components/TimelineNavbar";
 import {usePathname} from "next/navigation";
 

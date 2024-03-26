@@ -1,4 +1,5 @@
 import { IoIosCheckmarkCircle } from 'react-icons/io'
+import {ListInterface} from "@/interfaces/List";
 
 const FeatCard = ({ lists, title, shortDes }: { lists: ListInterface[]; title: string; shortDes: string }) => {
   return (

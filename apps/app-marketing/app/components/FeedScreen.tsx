@@ -170,6 +170,7 @@ const FeedScreen = () => {
 
     return (
         <div className='md:flex flex-col flex-1 justify-center items-center'>
+            <div  className="text-sm flex gap-1"> <span className="font-semibold ">Aung Myat Moe</span>commented on this.</div>
             {
                 timelineData.map((data: TimeLineProps) => {
                     return (
