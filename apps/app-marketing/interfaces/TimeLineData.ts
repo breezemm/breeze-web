@@ -1,4 +1,4 @@
-export interface TimeLineProps{
+export interface TimeLineProps {
   image: string;
   comments: any[];
   description: string;
@@ -18,10 +18,10 @@ export interface TimeLineProps{
         tiktok: string;
         facebook: string;
         telegram: string;
-        instagram: string
+        instagram: string;
       };
       bio: string;
-      language: string
+      language: string;
     };
     profile_image: string;
     address: { city: string };
@@ -29,10 +29,10 @@ export interface TimeLineProps{
     has_followed: null;
     name: string;
     id: number;
-    interests: ({ name: string; id: number })[];
+    interests: { name: string; id: number }[];
     email: string;
-    username: string
+    username: string;
   };
   phases: any[];
-  start_date: string
+  start_date: string;
 }

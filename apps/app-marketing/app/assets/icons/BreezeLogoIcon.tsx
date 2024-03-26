@@ -1,8 +1,7 @@
-import {SVGProps} from 'react'
+import { SVGProps } from "react";
 
-const BreezeLogoIcon = ({...props}: SVGProps<SVGSVGElement>) => {
+const BreezeLogoIcon = ({ ...props }: SVGProps<SVGSVGElement>) => {
   return (
-
     <svg
       version="1.1"
       id="Layer_1"
@@ -11,27 +10,26 @@ const BreezeLogoIcon = ({...props}: SVGProps<SVGSVGElement>) => {
       x="0px"
       y="0px"
       viewBox="0 0 2000 2000"
-
       xmlSpace="preserve"
       {...props}
     >
       <style
         type="text/css"
         dangerouslySetInnerHTML={{
-          __html: "\n\t.st0{fill:#191A1A;}\n\t.st1{fill:#FFFFFF;}\n"
+          __html: "\n\t.st0{fill:#191A1A;}\n\t.st1{fill:#FFFFFF;}\n",
         }}
       />
       <g>
         <path
           className="st0"
-          fill='currentColor'
+          fill="currentColor"
           d="M566.34,277.51h867.31c174.71,0,316.34,141.63,316.34,316.34v867.31c0,174.71-141.63,316.34-316.34,316.34
           H566.34c-174.71,0-316.34-141.63-316.34-316.34V593.85C250,419.14,391.63,277.51,566.34,277.51z"
         />
       </g>
       <path
         className="st1"
-        fill='currentColor'
+        fill="currentColor"
         d="M1351.37,1000.39c-54.1-85.6-149.56-142.49-258.26-142.49c-108.17,0-176.92,53.21-246.78,127.11l-0.01-0.01
       l-33.68,35.77v-288c0-81.91-62.24-153.06-143.38-156.18c-1.97-0.13-4.01-0.19-5.98-0.19v682.94l61.16,72.23l75.99-81.14
       c0,0,163.69-174.89,164.26-175.59c36.53-38.95,72.74-67.72,129-67.72c55.81,0,104.82,29.21,132.57,73.13
@@ -42,8 +40,6 @@ const BreezeLogoIcon = ({...props}: SVGProps<SVGSVGElement>) => {
       c104.44-48.49,176.73-154.27,176.73-276.91c0-34.37-5.66-67.46-16.23-98.26C1374.4,1042.08,1364.03,1020.44,1351.37,1000.39z"
       />
     </svg>
-
-
   );
 };
 

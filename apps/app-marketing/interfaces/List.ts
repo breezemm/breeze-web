@@ -1,7 +1,7 @@
 export interface ListInterface {
-  id: number
-  title: string
+  id: number;
+  title: string;
   tag?: {
-    title: string
-  } | null
+    title: string;
+  } | null;
 }

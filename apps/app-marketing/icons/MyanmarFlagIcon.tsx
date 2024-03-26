@@ -1,6 +1,9 @@
-import {IconPropsInterface} from "@/interfaces/IconProps";
+import { IconPropsInterface } from "@/interfaces/IconProps";
 
-const MyanmarFlagIcon = ({ width = '25', height = '25' }: IconPropsInterface) => {
+const MyanmarFlagIcon = ({
+  width = "25",
+  height = "25",
+}: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -12,7 +15,12 @@ const MyanmarFlagIcon = ({ width = '25', height = '25' }: IconPropsInterface) =>
     >
       <path d="M24.5 0H0.5V24H24.5V0Z" fill="url(#pattern_myanmar)" />
       <defs>
-        <pattern id="pattern_myanmar" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <pattern
+          id="pattern_myanmar"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
           <use xlinkHref="#image0_48_7" transform="scale(0.00625)" />
         </pattern>
         <image
@@ -23,7 +31,7 @@ const MyanmarFlagIcon = ({ width = '25', height = '25' }: IconPropsInterface) =>
         />
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default MyanmarFlagIcon
+export default MyanmarFlagIcon;

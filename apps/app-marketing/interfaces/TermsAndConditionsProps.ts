@@ -1,5 +1,5 @@
-export interface TermsAndPrivacyProps{
-    params:{
-        slug: string
-    }
+export interface TermsAndPrivacyProps {
+  params: {
+    slug: string;
+  };
 }

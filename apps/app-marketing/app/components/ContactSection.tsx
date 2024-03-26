@@ -1,5 +1,9 @@
-import { ContactInfo } from '@/interfaces/Footer'
-export const ContactSection = ({ ContactInfoData }: { ContactInfoData: ContactInfo[] }) => {
+import { ContactInfo } from "@/interfaces/Footer";
+export const ContactSection = ({
+  ContactInfoData,
+}: {
+  ContactInfoData: ContactInfo[];
+}) => {
   return (
     <div>
       <div className="mt-5 flex  flex-col gap-7 p-2  md:gap-10">
@@ -9,9 +13,9 @@ export const ContactSection = ({ ContactInfoData }: { ContactInfoData: ContactIn
               {data.icon}
               <p>{data.text}</p>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
