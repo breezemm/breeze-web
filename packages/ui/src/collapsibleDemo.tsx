@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { CaretSortIcon } from "@radix-ui/react-icons"
+import * as React from "react";
+import { CaretSortIcon } from "@radix-ui/react-icons";
 
-import { Button } from "./button"
+import { Button } from "./button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "./collapsible"
+} from "./collapsible";
 
 export function CollapsibleDemo() {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <Collapsible
@@ -42,5 +42,5 @@ export function CollapsibleDemo() {
         </div>
       </CollapsibleContent>
     </Collapsible>
-  )
+  );
 }

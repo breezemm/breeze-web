@@ -1,6 +1,6 @@
-import {IconPropsInterface} from "@/interfaces/IconProps";
+import { IconPropsInterface } from "@/interfaces/IconProps";
 
-const GetawayIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
+const GetawayIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -12,7 +12,12 @@ const GetawayIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
     >
       <path d="M40 0H0V40H40V0Z" fill="url(#pattern_getaway)" />
       <defs>
-        <pattern id="pattern_getaway" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <pattern
+          id="pattern_getaway"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
           <use xlinkHref="#image0_44_275" transform="scale(0.0138889)" />
         </pattern>
         <image
@@ -23,7 +28,7 @@ const GetawayIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
         />
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default GetawayIcon
+export default GetawayIcon;

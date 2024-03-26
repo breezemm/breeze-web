@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import {
   Form,
   FormControl,
@@ -11,16 +11,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "./form"
-import { Button } from "./button"
-import React from "react"
-import { Input } from "./input"
+} from "./form";
+import { Button } from "./button";
+import React from "react";
+import { Input } from "./input";
 
 const formSchema = z.object({
   username: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
-})
+});
 
 export function ProfileForm() {
   // 1. Define your form.
@@ -29,13 +29,13 @@ export function ProfileForm() {
     defaultValues: {
       username: "",
     },
-  })
+  });
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    alert("Your great " + values.username)
+    alert("Your great " + values.username);
   }
 
   return (
@@ -60,6 +60,5 @@ export function ProfileForm() {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
-  )
-
+  );
 }

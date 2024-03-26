@@ -1,5 +1,5 @@
 export interface EventCategoryInterface {
-    id: number
-    title: string
-    icon: string
+  id: number;
+  title: string;
+  icon: string;
 }

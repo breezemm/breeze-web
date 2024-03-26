@@ -1,14 +1,14 @@
 export interface ContactInfo {
-  icon: JSX.Element
-  text: string
+  icon: JSX.Element;
+  text: string;
 }
 
 export interface SocialInfo {
-  icon: JSX.Element | string
-  link: string
+  icon: JSX.Element | string;
+  link: string;
 }
 
 export interface SocialSectonProps {
-  SocialList: SocialInfo[]
-  storesDownload: SocialInfo[]
+  SocialList: SocialInfo[];
+  storesDownload: SocialInfo[];
 }

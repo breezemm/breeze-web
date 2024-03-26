@@ -1,6 +1,6 @@
-import {IconPropsInterface} from "@/interfaces/IconProps";
+import { IconPropsInterface } from "@/interfaces/IconProps";
 
-const CelebrateIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
+const CelebrateIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -12,7 +12,12 @@ const CelebrateIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
     >
       <path d="M40.5 0H0.5V40H40.5V0Z" fill="url(#pattern_celebrate)" />
       <defs>
-        <pattern id="pattern_celebrate" patternContentUnits="objectBoundingBox" width="1" height="1">
+        <pattern
+          id="pattern_celebrate"
+          patternContentUnits="objectBoundingBox"
+          width="1"
+          height="1"
+        >
           <use xlinkHref="#image0_6_597" transform="scale(0.00625)" />
         </pattern>
         <image
@@ -23,7 +28,7 @@ const CelebrateIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
         />
       </defs>
     </svg>
-  )
-}
+  );
+};
 
-export default CelebrateIcon
+export default CelebrateIcon;

@@ -1,5 +1,5 @@
-import {QueryClient} from "@tanstack/react-query";
-import {User} from "~/store";
+import { QueryClient } from "@tanstack/react-query";
+import { User } from "~/store";
 
 export interface RootRouterContext {
   queryClient: QueryClient;
