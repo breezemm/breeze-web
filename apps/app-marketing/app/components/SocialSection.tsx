@@ -26,10 +26,10 @@ export const SocialSection = ({ SocialList, storesDownload }: SocialSectonProps)
           })}
         </div>
         <div className="flex gap-4">
-          <Link href="/terms" className="underline">
+          <Link href={"/terms-and-conditions"} className="underline">
             <p>Terms & Conditions</p>
           </Link>
-          <Link href="/privacy" className="underline">
+          <Link href={"/privacy"} className="underline">
             <p>Privacy Policy</p>
           </Link>
         </div>

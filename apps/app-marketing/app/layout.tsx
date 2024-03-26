@@ -28,7 +28,6 @@ export default function RootLayout({
       <CustomLayout>
         {children}
       </CustomLayout>
-
       </body>
       </html>
   )
