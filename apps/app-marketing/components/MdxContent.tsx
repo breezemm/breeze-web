@@ -1,5 +1,20 @@
-import { cn } from "@/utils/index";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import * as runtime from "react/jsx-runtime";
+import Image from "next/image";
+import React from "react";
+import { cn } from "@/utils";
+
+const mdxComponents = {
+  Image,
+};
+
+const useMDXComponent = (code: string) => {
+  const fn = new Function(code);
+  return fn({ ...runtime }).default;
+};
+
+interface MdxProps {
+  code: string;
+}
 
 const components = {
   h1: ({ className, ...rest }: React.HTMLAttributes<HTMLHeadingElement>) => (
@@ -153,10 +168,7 @@ const components = {
     />
   ),
 };
-
-const MdxComponent = ({ code }: { code: string }) => {
+export const MdxContent = ({ code }: MdxProps) => {
   const Component = useMDXComponent(code);
-  return <Component components={components} />;
+  return <Component components={{ ...mdxComponents, ...components }} />;
 };
-
-export default MdxComponent;

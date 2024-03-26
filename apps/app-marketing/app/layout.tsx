@@ -4,6 +4,8 @@ import "@breeze/ui/globals.css";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
+import { useRouter } from "next/router";
+import CustomLayout from "../components/CustomLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning={true}>
-        <NavBar />
-        {children}
-        <Footer />
+        <CustomLayout>{children}</CustomLayout>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import { ContactSection } from "@/app/components/ContactSection";
 import { SocialSection } from "@/app/components/SocialSection";
 import { ContactInfoData, SocialList, Stores } from "@/data/contact";
-import BreezeLogo from "@/app/assets/BreezeLogo";
+import BreezeLogo from "@/app/assets/icons/BreezeLogo";
 
 const Footer = () => {
   return (
