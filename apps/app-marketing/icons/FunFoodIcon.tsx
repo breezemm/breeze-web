@@ -1,3 +1,5 @@
+import {IconPropsInterface} from "@/interfaces/IconProps";
+
 const FunFoodIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
   return (
     <svg
