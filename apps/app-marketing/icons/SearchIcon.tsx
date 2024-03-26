@@ -1,6 +1,4 @@
-import { IconPropsInterface } from "@/interfaces/IconProps";
-
-const SearchIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
+const SearchIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -12,12 +10,7 @@ const SearchIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
     >
       <path d="M40.5 0H0.5V40H40.5V0Z" fill="url(#pattern_search)" />
       <defs>
-        <pattern
-          id="pattern_search"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
+        <pattern id="pattern_search" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#image0_6_592" transform="scale(0.00625)" />
         </pattern>
         <image
@@ -28,7 +21,7 @@ const SearchIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
         />
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default SearchIcon;
+export default SearchIcon

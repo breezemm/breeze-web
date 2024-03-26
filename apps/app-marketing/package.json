@@ -4,25 +4,27 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:content": "velite --watch",
+    "build:content": "velite --clean",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@breeze/ui": "workspace:*",
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.1.0",
+    "@repo/tailwind-config": "workspace:*",
     "@types/mdx": "^2.0.11",
     "clsx": "^2.1.0",
-    "contentlayer": "^0.3.4",
-    "next-contentlayer": "^0.3.4",
-    "react-icons": "^5.0.1",
-    "tailwind-merge": "^2.2.1",
-    "@breeze/ui": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
+    "gray-matter": "^4.0.3",
     "next": "^14.1.1",
+    "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.1.1",
@@ -39,6 +41,6 @@
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5.3.3",
-    "velite": "^0.1.0-beta.13"
+    "velite": "latest"
   }
 }

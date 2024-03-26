@@ -1,6 +1,4 @@
-import { IconPropsInterface } from "@/interfaces/IconProps";
-
-const FunFoodIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
+const FunFoodIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -12,12 +10,7 @@ const FunFoodIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
     >
       <path d="M40 0H0V40H40V0Z" fill="url(#pattern_funfood)" />
       <defs>
-        <pattern
-          id="pattern_funfood"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
+        <pattern id="pattern_funfood" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#image0_44_298" transform="scale(0.00625)" />
         </pattern>
         <image
@@ -28,7 +21,7 @@ const FunFoodIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
         />
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default FunFoodIcon;
+export default FunFoodIcon

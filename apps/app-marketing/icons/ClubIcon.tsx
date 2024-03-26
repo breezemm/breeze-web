@@ -1,6 +1,4 @@
-import { IconPropsInterface } from "@/interfaces/IconProps";
-
-const ClubIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
+const ClubIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -12,12 +10,7 @@ const ClubIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
     >
       <rect width="40" height="40" fill="url(#pattern_club)" />
       <defs>
-        <pattern
-          id="pattern_club"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
+        <pattern id="pattern_club" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#image0_44_308" transform="scale(0.00625)" />
         </pattern>
         <image
@@ -28,7 +21,7 @@ const ClubIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
         />
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default ClubIcon;
+export default ClubIcon

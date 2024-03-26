@@ -1,9 +1,4 @@
-import { IconPropsInterface } from "@/interfaces/IconProps";
-
-const TechnologyIcon = ({
-  width = "40",
-  height = "40",
-}: IconPropsInterface) => {
+const TechnologyIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -15,12 +10,7 @@ const TechnologyIcon = ({
     >
       <path d="M40 0H0V40H40V0Z" fill="url(#pattern_tech)" />
       <defs>
-        <pattern
-          id="pattern_tech"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
+        <pattern id="pattern_tech" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#image0_44_351" transform="scale(0.0138889)" />
         </pattern>
         <image
@@ -31,7 +21,7 @@ const TechnologyIcon = ({
         />
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default TechnologyIcon;
+export default TechnologyIcon

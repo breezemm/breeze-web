@@ -1,6 +1,4 @@
-import { IconPropsInterface } from "@/interfaces/IconProps";
-
-const SportIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
+const SportIcon = ({ width = '40', height = '40' }: IconPropsInterface) => {
   return (
     <svg
       width={width}
@@ -12,12 +10,7 @@ const SportIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
     >
       <path d="M40 0H0V40H40V0Z" fill="url(#pattern_sport)" />
       <defs>
-        <pattern
-          id="pattern_sport"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
+        <pattern id="pattern_sport" patternContentUnits="objectBoundingBox" width="1" height="1">
           <use xlinkHref="#image0_44_313" transform="scale(0.0138889)" />
         </pattern>
         <image
@@ -28,7 +21,7 @@ const SportIcon = ({ width = "40", height = "40" }: IconPropsInterface) => {
         />
       </defs>
     </svg>
-  );
-};
+  )
+}
 
-export default SportIcon;
+export default SportIcon
