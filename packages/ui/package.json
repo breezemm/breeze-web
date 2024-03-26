@@ -72,8 +72,6 @@
         "./command": "./src/command.tsx",
         "./popover": "./src/popover.tsx",
         "./contextmenu": "./src/contextmenu.tsx",
-        "./collapsibleDemo": "./src/collapsibleDemo.tsx",
-        "./comboboxDemo": "./src/comboboxDemo.tsx",
         "./carousel": "./src/carousel.tsx",
         "./breadcrumb": "./src/breadcrumb.tsx",
         "./table": "./src/table.tsx",

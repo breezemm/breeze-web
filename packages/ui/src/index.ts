@@ -1,6 +1,5 @@
-import { Calendar } from "./date-picker/calendar";
+export {cn} from "./utils/cn";
 
-export { cn } from "./utils/cn";
 export * from "./button";
 export * from "./card";
 export * from "./dialog";
@@ -24,7 +23,6 @@ export * from "./collapsibleDemo";
 export * from "./comboboxDemo";
 export * from "./carousel";
 export * from "./checkbox";
-export * from "./calendarDemo";
 export * from "./progress";
 export * from "./breadcrumb";
 export * from "./table";
