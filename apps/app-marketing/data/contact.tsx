@@ -6,7 +6,7 @@ import { ContactInfo, SocialInfo } from '@/interfaces/Footer'
 import { FaInstagram } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa6'
 import { FaTelegram } from 'react-icons/fa'
-import { TikTokLogo } from '@/app/assets/TiktokLogo'
+import { TikTokLogo } from '@/app/assets/icons/TiktokLogo'
 import { MdFacebook } from 'react-icons/md'
 
 import AppleStore from '@/app/assets/apple_store.svg'
