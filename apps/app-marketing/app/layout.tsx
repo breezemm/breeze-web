@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Breeze",
   description: "Breeze | The event planning app",
-    icons:'./icon.svg'
+  icons: "./icon.svg",
 };
 
 export default function RootLayout({
