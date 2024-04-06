@@ -1,0 +1,16 @@
+services:
+  suggestion:
+    build:
+      context: .
+      dockerfile: ./apps/suggestion/dev.dockerfile
+      target: development
+    command: pnpm run dev --filter suggestion
+    ports:
+      - 8003:80
+    volumes:
+      - .:/usr/src/app
+      - /var/www/suggestion/node_modules
+    depends_on:
+      - kafka
+    networks:
+      - dev

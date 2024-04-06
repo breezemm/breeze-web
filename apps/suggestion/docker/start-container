@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+set -e
+
+if [ -e /opt/node_modules ] && [ -e /opt/dist ]; then
+  cp /opt/node_modules /var/www/suggestion/node_modules -r
+  cp /opt/dist /var/www/suggestion/dist -r
+  chown node:node node_modules dist -R
+  pnpm run dev --filter suggestion
+fi
+
+pnpm run start --filter suggestion
