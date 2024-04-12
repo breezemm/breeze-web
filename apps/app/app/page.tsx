@@ -4,8 +4,8 @@ import React from "react";
 
 export default function Home() {
   return (
-      <div className="flex md:justify-center ">
-          <FeedScreen/>
-      </div>
+    <div className="flex md:justify-center ">
+      <FeedScreen />
+    </div>
   );
 }

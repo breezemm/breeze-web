@@ -10,121 +10,121 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as AuthenticatedImport } from './routes/_authenticated'
-import { Route as AuthenticatedIndexImport } from './routes/_authenticated/index'
-import { Route as AuthLoginImport } from './routes/auth/login'
-import { Route as AuthenticatedDashboardWalletIndexImport } from './routes/_authenticated/dashboard/wallet/index'
-import { Route as AuthenticatedDashboardVerifyIndexImport } from './routes/_authenticated/dashboard/verify/index'
-import { Route as AuthenticatedDashboardHomeIndexImport } from './routes/_authenticated/dashboard/home/index'
-import { Route as AuthenticatedDashboardWalletCashInCashOutImport } from './routes/_authenticated/dashboard/wallet/cash-in-cash-out'
-import { Route as AuthenticatedDashboardWalletCashHistoryImport } from './routes/_authenticated/dashboard/wallet/cash-history'
-import { Route as AuthenticatedDashboardHomeUsersImport } from './routes/_authenticated/dashboard/home/users'
-import { Route as AuthenticatedDashboardHomeEventsImport } from './routes/_authenticated/dashboard/home/events'
+import { Route as rootRoute } from "./routes/__root";
+import { Route as AuthenticatedImport } from "./routes/_authenticated";
+import { Route as AuthenticatedIndexImport } from "./routes/_authenticated/index";
+import { Route as AuthLoginImport } from "./routes/auth/login";
+import { Route as AuthenticatedDashboardWalletIndexImport } from "./routes/_authenticated/dashboard/wallet/index";
+import { Route as AuthenticatedDashboardVerifyIndexImport } from "./routes/_authenticated/dashboard/verify/index";
+import { Route as AuthenticatedDashboardHomeIndexImport } from "./routes/_authenticated/dashboard/home/index";
+import { Route as AuthenticatedDashboardWalletCashInCashOutImport } from "./routes/_authenticated/dashboard/wallet/cash-in-cash-out";
+import { Route as AuthenticatedDashboardWalletCashHistoryImport } from "./routes/_authenticated/dashboard/wallet/cash-history";
+import { Route as AuthenticatedDashboardHomeUsersImport } from "./routes/_authenticated/dashboard/home/users";
+import { Route as AuthenticatedDashboardHomeEventsImport } from "./routes/_authenticated/dashboard/home/events";
 
 // Create/Update Routes
 
 const AuthenticatedRoute = AuthenticatedImport.update({
-  id: '/_authenticated',
+  id: "/_authenticated",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AuthenticatedIndexRoute = AuthenticatedIndexImport.update({
-  path: '/',
+  path: "/",
   getParentRoute: () => AuthenticatedRoute,
-} as any)
+} as any);
 
 const AuthLoginRoute = AuthLoginImport.update({
-  path: '/auth/login',
+  path: "/auth/login",
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AuthenticatedDashboardWalletIndexRoute =
   AuthenticatedDashboardWalletIndexImport.update({
-    path: '/dashboard/wallet/',
+    path: "/dashboard/wallet/",
     getParentRoute: () => AuthenticatedRoute,
-  } as any)
+  } as any);
 
 const AuthenticatedDashboardVerifyIndexRoute =
   AuthenticatedDashboardVerifyIndexImport.update({
-    path: '/dashboard/verify/',
+    path: "/dashboard/verify/",
     getParentRoute: () => AuthenticatedRoute,
-  } as any)
+  } as any);
 
 const AuthenticatedDashboardHomeIndexRoute =
   AuthenticatedDashboardHomeIndexImport.update({
-    path: '/dashboard/home/',
+    path: "/dashboard/home/",
     getParentRoute: () => AuthenticatedRoute,
-  } as any)
+  } as any);
 
 const AuthenticatedDashboardWalletCashInCashOutRoute =
   AuthenticatedDashboardWalletCashInCashOutImport.update({
-    path: '/dashboard/wallet/cash-in-cash-out',
+    path: "/dashboard/wallet/cash-in-cash-out",
     getParentRoute: () => AuthenticatedRoute,
-  } as any)
+  } as any);
 
 const AuthenticatedDashboardWalletCashHistoryRoute =
   AuthenticatedDashboardWalletCashHistoryImport.update({
-    path: '/dashboard/wallet/cash-history',
+    path: "/dashboard/wallet/cash-history",
     getParentRoute: () => AuthenticatedRoute,
-  } as any)
+  } as any);
 
 const AuthenticatedDashboardHomeUsersRoute =
   AuthenticatedDashboardHomeUsersImport.update({
-    path: '/dashboard/home/users',
+    path: "/dashboard/home/users",
     getParentRoute: () => AuthenticatedRoute,
-  } as any)
+  } as any);
 
 const AuthenticatedDashboardHomeEventsRoute =
   AuthenticatedDashboardHomeEventsImport.update({
-    path: '/dashboard/home/events',
+    path: "/dashboard/home/events",
     getParentRoute: () => AuthenticatedRoute,
-  } as any)
+  } as any);
 
 // Populate the FileRoutesByPath interface
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/_authenticated': {
-      preLoaderRoute: typeof AuthenticatedImport
-      parentRoute: typeof rootRoute
-    }
-    '/auth/login': {
-      preLoaderRoute: typeof AuthLoginImport
-      parentRoute: typeof rootRoute
-    }
-    '/_authenticated/': {
-      preLoaderRoute: typeof AuthenticatedIndexImport
-      parentRoute: typeof AuthenticatedImport
-    }
-    '/_authenticated/dashboard/home/events': {
-      preLoaderRoute: typeof AuthenticatedDashboardHomeEventsImport
-      parentRoute: typeof AuthenticatedImport
-    }
-    '/_authenticated/dashboard/home/users': {
-      preLoaderRoute: typeof AuthenticatedDashboardHomeUsersImport
-      parentRoute: typeof AuthenticatedImport
-    }
-    '/_authenticated/dashboard/wallet/cash-history': {
-      preLoaderRoute: typeof AuthenticatedDashboardWalletCashHistoryImport
-      parentRoute: typeof AuthenticatedImport
-    }
-    '/_authenticated/dashboard/wallet/cash-in-cash-out': {
-      preLoaderRoute: typeof AuthenticatedDashboardWalletCashInCashOutImport
-      parentRoute: typeof AuthenticatedImport
-    }
-    '/_authenticated/dashboard/home/': {
-      preLoaderRoute: typeof AuthenticatedDashboardHomeIndexImport
-      parentRoute: typeof AuthenticatedImport
-    }
-    '/_authenticated/dashboard/verify/': {
-      preLoaderRoute: typeof AuthenticatedDashboardVerifyIndexImport
-      parentRoute: typeof AuthenticatedImport
-    }
-    '/_authenticated/dashboard/wallet/': {
-      preLoaderRoute: typeof AuthenticatedDashboardWalletIndexImport
-      parentRoute: typeof AuthenticatedImport
-    }
+    "/_authenticated": {
+      preLoaderRoute: typeof AuthenticatedImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/auth/login": {
+      preLoaderRoute: typeof AuthLoginImport;
+      parentRoute: typeof rootRoute;
+    };
+    "/_authenticated/": {
+      preLoaderRoute: typeof AuthenticatedIndexImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    "/_authenticated/dashboard/home/events": {
+      preLoaderRoute: typeof AuthenticatedDashboardHomeEventsImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    "/_authenticated/dashboard/home/users": {
+      preLoaderRoute: typeof AuthenticatedDashboardHomeUsersImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    "/_authenticated/dashboard/wallet/cash-history": {
+      preLoaderRoute: typeof AuthenticatedDashboardWalletCashHistoryImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    "/_authenticated/dashboard/wallet/cash-in-cash-out": {
+      preLoaderRoute: typeof AuthenticatedDashboardWalletCashInCashOutImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    "/_authenticated/dashboard/home/": {
+      preLoaderRoute: typeof AuthenticatedDashboardHomeIndexImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    "/_authenticated/dashboard/verify/": {
+      preLoaderRoute: typeof AuthenticatedDashboardVerifyIndexImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    "/_authenticated/dashboard/wallet/": {
+      preLoaderRoute: typeof AuthenticatedDashboardWalletIndexImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
   }
 }
 
@@ -142,6 +142,6 @@ export const routeTree = rootRoute.addChildren([
     AuthenticatedDashboardWalletIndexRoute,
   ]),
   AuthLoginRoute,
-])
+]);
 
 /* prettier-ignore-end */
