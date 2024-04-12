@@ -5,8 +5,8 @@ import HomeIcon from "@/app/assets/icons/HomeIcon";
 import SearchIcon from "@/app/assets/icons/SearchIcon";
 import EventIcon from "@/app/assets/icons/EventIcon";
 import NotificationIcon from "@/app/assets/icons/NotiIcon";
-import UserProfileIcon from "../app/assets/icons/UserProfileIcon";
 import DownloadDialogBox from "@/components/DownloadDialogBox";
+import UserProfileIcon from "@/app/assets/icons/UserProfileIcon";
 
 const TimelineFooter = () => {
   return (
