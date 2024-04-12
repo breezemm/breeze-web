@@ -27,6 +27,11 @@ const config: Config = {
         7: "#0077CC",
       },
       white: "#FFFFFF",
+      black: {
+        1: "#191A1A",
+      },
+      lightgray: "rgb(211,211,211)",
+      darkgray: "#646668",
     },
     extend: {
       backgroundImage: {
