@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Badge, Button } from "@breeze/ui";
 import Link from "next/link";
+import { cn } from "@/utils";
 
 export default function Event() {
   const [activePill, setActivePill] = useState("launched");
@@ -100,46 +101,70 @@ export default function Event() {
           <ul className="flex w-full overflow h-9 px-0 py-0 pl-6 justify-between">
             <li className="mr-2">
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "launched" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "launched",
+                  "text-darkgray": activePill !== "launched",
+                })}
                 onClick={() => handlePillClick("launched")}
               >
                 Launched
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "launched" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "launched",
+                  "border-white": activePill !== "launched",
+                })}
               />
             </li>
             <li className="mr-2">
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "upcoming" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "upcoming",
+                  "text-darkgray": activePill !== "upcoming",
+                })}
                 onClick={() => handlePillClick("upcoming")}
               >
                 Upcoming
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "upcoming" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "upcoming",
+                  "border-white": activePill !== "upcoming",
+                })}
               />
             </li>
             <li>
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "joined" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "joined",
+                  "text-darkgray": activePill !== "joined",
+                })}
                 onClick={() => handlePillClick("joined")}
               >
                 Joined
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "joined" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "joined",
+                  "border-white": activePill !== "joined",
+                })}
               />
             </li>
             <li>
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "saved" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "saved",
+                  "text-darkgray": activePill !== "saved",
+                })}
                 onClick={() => handlePillClick("saved")}
               >
                 Saved
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "saved" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "saved",
+                  "border-white": activePill !== "saved",
+                })}
               />
             </li>
           </ul>

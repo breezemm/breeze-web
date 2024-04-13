@@ -7,6 +7,7 @@ import MuralArt from "@/app/assets/images/muralArtFestival.svg";
 import Link from "next/link";
 import SongKran from "@/app/assets/images/songKran.svg";
 import FireWorkShow from "@/app/assets/images/fireworkShow.svg";
+import { cn } from "@/utils";
 
 export default function EventHavingPage() {
   const [activePill, setActivePill] = useState("launched");
@@ -19,15 +20,15 @@ export default function EventHavingPage() {
     switch (activePill) {
       case "launched":
         return (
-          <div className="overflow-auto ">
+          <div className="justify-center items-center">
             {/* for may 2023*/}
-            <section className="flex flex-col items-center mt-4 ">
-              <h1 className="mr-[260px] font-semibold text-lg mb-3 ">
+            <section className="flex flex-col justify-center items-center mt-4 ">
+              <h1 className="mr-[260px]  font-semibold text-lg mb-3 ">
                 May, 2023
               </h1>
 
-              <div className="flex flex-row mr-[75px]">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex sm:flex-row mr-[75px]">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
                   <div className="bg-lavender ">
                     <Link href={"#"}>
                       <Image
@@ -49,7 +50,7 @@ export default function EventHavingPage() {
               <hr className="border-lightgray w-[400px] mt-5 mb-5 " />
 
               <div className="flex flex-row mr-[75px]">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
                   <div className="bg-lavender ">
                     <Link href={"/event/including-events/mural-art"}>
                       <Image
@@ -77,7 +78,7 @@ export default function EventHavingPage() {
               </h1>
 
               <div className="flex flex-row mr-[75px]">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
                   <div className="bg-lavender ">
                     <Link href={"/event/including-events/song-kran"}>
                       <Image
@@ -99,7 +100,7 @@ export default function EventHavingPage() {
               <hr className="border-lightgray w-[400px] mt-5 mb-5 " />
 
               <div className="flex flex-row mr-[75px]">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
                   <div className="bg-lavender ">
                     <Link href={"#"}>
                       <Image
@@ -180,7 +181,7 @@ export default function EventHavingPage() {
         <Link href={"#"}>
           <Badge
             variant="outline"
-            className="w-80 h-14 rounded-lg border border-black-1 py-4 text-base leading-6 tracking-tighter justify-between"
+            className="w-80 md:h-14 rounded-lg border border-black-1 py-4 text-base leading-6 tracking-tighter justify-between"
           >
             0.00
             <span className="inline-block text-2xl">&#x2192;</span>
@@ -200,46 +201,70 @@ export default function EventHavingPage() {
           <ul className="flex w-full overflow h-9 px-0 py-0 pl-6 justify-between">
             <li className="mr-2">
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "launched" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "launched",
+                  "text-darkgray": activePill !== "launched",
+                })}
                 onClick={() => handlePillClick("launched")}
               >
                 Launched
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "launched" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "launched",
+                  "border-white": activePill !== "launched",
+                })}
               />
             </li>
             <li className="mr-2">
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "upcoming" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "upcoming",
+                  "text-darkgray": activePill !== "upcoming",
+                })}
                 onClick={() => handlePillClick("upcoming")}
               >
                 Upcoming
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "upcoming" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "upcoming",
+                  "border-white": activePill !== "upcoming",
+                })}
               />
             </li>
             <li>
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "joined" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "joined",
+                  "text-darkgray": activePill !== "joined",
+                })}
                 onClick={() => handlePillClick("joined")}
               >
                 Joined
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "joined" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "joined",
+                  "border-white": activePill !== "joined",
+                })}
               />
             </li>
             <li>
               <button
-                className={`py-2 px-4 gap-2 ${activePill === "saved" ? "text-black-1" : "text-darkgray"}`}
+                className={cn("py-2", "px-4", "gap-2", {
+                  "text-black-1": activePill === "saved",
+                  "text-darkgray": activePill !== "saved",
+                })}
                 onClick={() => handlePillClick("saved")}
               >
                 Saved
               </button>
               <hr
-                className={`w-auto border-2 ${activePill === "saved" ? "border-black-1" : "border-white"}`}
+                className={cn("w-auto", "border-2", {
+                  "border-black-1": activePill === "saved",
+                  "border-white": activePill !== "saved",
+                })}
               />
             </li>
           </ul>
