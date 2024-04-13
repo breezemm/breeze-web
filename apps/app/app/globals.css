@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-    @apply text-neutral-10;
+  @apply text-neutral-10;
 }
 
 h1,
@@ -14,9 +14,15 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Sora", sans-serif;
+  font-family: "Sora", sans-serif;
 }
 
-p, ul, ol, li, button, div, span {
-    font-family: "Figtree", sans-serif;
+p,
+ul,
+ol,
+li,
+button,
+div,
+span {
+  font-family: "Figtree", sans-serif;
 }
