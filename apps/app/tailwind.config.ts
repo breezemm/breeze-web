@@ -27,9 +27,9 @@ const config: Config = {
         7: "#0077CC",
       },
       white: "#FFFFFF",
-      grey:{
-        1:"#4B4D4E"
-      }
+      grey: {
+        1: "#4B4D4E",
+      },
     },
     extend: {
       backgroundImage: {

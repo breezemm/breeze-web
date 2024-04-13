@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         {children}
-      <TimelineFooter/>
+        <TimelineFooter />
       </body>
     </html>
   );
