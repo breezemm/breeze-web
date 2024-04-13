@@ -13,7 +13,7 @@ const NavBar = () => {
       <Link href="/">
         <BreezeLogoIcon className="md:w-20 md:h-20 w-16 h-16" />
       </Link>
-        <TimelineNavbar/>
+      <TimelineNavbar />
       <DownloadButton />
     </div>
   );

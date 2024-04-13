@@ -9,7 +9,7 @@ import DownloadDialogBox from "@/components/DownloadDialogBox";
 
 const TimelineFooter = () => {
   return (
-    <div className="sticky bottom-0 md:flex">
+    <div className="fixed w-full bottom-0 md:flex">
       <DownloadDialogBox className="justify-between   w-full flex bg-white pt-2 pb-5 items-center px-6 border-t-2  md:hidden">
         <HomeIcon />
         <SearchIcon />
