@@ -1,5 +1,6 @@
 "use client";
-import BackIcon from "@/app/assets/icons/backicon";
+import BackIcon from "@/app/assets/icons/BackIcon";
+import { cn } from "@/utils";
 import { Button } from "@breeze/ui";
 import Link from "next/link";
 
@@ -74,24 +75,36 @@ export default function MuralArtEvent() {
         <ul className="flex flex-row justify-between w-full h-9 px-0 py-0 ">
           <li className="">
             <button
-              className={`w-40 h-9 gap-2 ${activePill === "launched" ? "text-black-1" : "text-darkgray"}`}
+              className={cn("w-40", "h-9", "gap-2", {
+                "text-black-1": activePill === "launched",
+                "text-darkgray": activePill !== "launched",
+              })}
               onClick={() => handlePillClick("launched")}
             >
               About
             </button>
             <hr
-              className={`w-auto border-2 ${activePill === "launched" ? "border-black-1" : "border-white"}`}
+              className={cn("w-auto", "border-2", {
+                "border-black-1": activePill === "launched",
+                "border-white": activePill !== "launched",
+              })}
             />
           </li>
           <li className="">
             <button
-              className={`w-40 h-9 gap-2 ${activePill === "upcoming" ? "text-black-1" : "text-darkgray"}`}
+              className={cn("w-40", "h-9", "gap-2", {
+                "text-black-1": activePill === "upcoming",
+                "text-darkgray": activePill !== "upcoming",
+              })}
               onClick={() => handlePillClick("upcoming")}
             >
               Community
             </button>
             <hr
-              className={`w-auto self-center border-2 ${activePill === "upcoming" ? "border-black-1" : "border-white"}`}
+              className={cn("w-auto", "self-center", "border-2", {
+                "border-black-1": activePill === "upcoming",
+                "border-white": activePill !== "upcoming",
+              })}
             />
           </li>
         </ul>
