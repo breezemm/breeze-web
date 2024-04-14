@@ -12,6 +12,7 @@
     "@breeze/ui": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@t3-oss/env-nextjs": "^0.9.2",
+    "jiti": "^1.21.0",
     "next": "14.2.1",
     "react": "^18",
     "react-dom": "^18",
