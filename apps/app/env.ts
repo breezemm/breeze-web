@@ -10,7 +10,6 @@ export const env = createEnv({
     },
 
     runtimeEnv: {
-        NEXT_PUBLIC_BREEZE_API_URL:
-        process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
+        NEXT_PUBLIC_BREEZE_API_URL: process.env.NEXT_PUBLIC_BREEZE_API_URL,
     },
 });
