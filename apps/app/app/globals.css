@@ -20,3 +20,24 @@ h6 {
 p, ul, ol, li, button, div, span {
     font-family: "Figtree", sans-serif;
 }
+
+/* Basic editor styles */
+.tiptap {
+    > * + * {
+        margin-top: 0.75em;
+    }
+}
+
+/*Tiptap Editor Styles*/
+/* Placeholder (at the top) */
+.tiptap .is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+}
+
+.tiptap.ProseMirror.ProseMirror-focused{
+    outline: none !important;
+}

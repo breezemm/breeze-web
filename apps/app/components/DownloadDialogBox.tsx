@@ -1,3 +1,4 @@
+
 import {
   Dialog,
   DialogContent,
@@ -26,7 +27,7 @@ const DownloadDialogBox = ({
         style={{ borderRadius: "1rem" }}
         className="w-80  flex justify-center  flex-col items-center gap-12 p-16"
       >
-        Login
+      Login
       </DialogContent>
     </Dialog>
   );
