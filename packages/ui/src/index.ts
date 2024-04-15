@@ -9,6 +9,7 @@ export * from "./form";
 export * from "./datePicker";
 export * from "./input";
 export * from "./profileForm";
+export * from "./label";
 
 export * from "./accordion";
 export * from "./alert-dialog";
@@ -21,6 +22,7 @@ export * from "./popover";
 export * from "./contextmenu";
 export * from "./collapsibleDemo";
 export * from "./comboboxDemo";
+export * from "./combobox";
 export * from "./carousel";
 export * from "./checkbox";
 export * from "./progress";

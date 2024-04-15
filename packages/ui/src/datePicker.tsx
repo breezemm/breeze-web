@@ -13,7 +13,7 @@ import {
 } from "./date-picker/pophover";
 import { cn } from "./utils/cn";
 
-export function DatePickerDemo() {
+export function DatePickerDemo({className}: {className?: string}) {
   const [date, setDate] = React.useState<Date>();
 
   return (
@@ -24,6 +24,7 @@ export function DatePickerDemo() {
           className={cn(
             "w-[180px] rounded-none border border-black font-normal",
             !date && "text-muted-foreground",
+            className
           )}
         >
           {date ? (
