@@ -27,3 +27,7 @@ export * from "./progress";
 export * from "./breadcrumb";
 export * from "./table";
 export * from "./switch";
+
+export * from "./toast";
+export * from "./toaster";
+export * from "./use-toast";
