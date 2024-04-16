@@ -19,7 +19,9 @@ const Profile = ({ isMyProfile = true }: ProfileProps) => {
     <div>
       <div className="relative pb-2 mb-7  ">
         <h3 className="text-lg  font-semibold text-center ">Jonathan</h3>
-        <SettingIcon className="absolute right-7 top-1 cursor-pointer" />
+        <Link href={"/profile/setting"}>
+          <SettingIcon className="absolute right-7 top-1 cursor-pointer" />
+        </Link>
       </div>
 
       <div className="flex gap-8 justify-between items-center mb-8">
