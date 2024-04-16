@@ -1,12 +1,12 @@
 import EventPost from "@/components/EventPost";
-import TipTap from "@/components/TipTap";
+import CommentInput from "@/components/CommentInput";
 
 const CommentPage = () => {
   return (
     <div>
       <EventPost />
       <div className="flex justify-between ">
-        <TipTap />
+        <CommentInput />
       </div>
     </div>
   );

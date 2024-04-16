@@ -9,7 +9,7 @@ import DownloadDialogBox from "@/components/DownloadDialogBox";
 
 const TimelineNavbar = () => {
   return (
-    <DownloadDialogBox className="md:flex items-center justify-between ms-24 px-8 w-[380px]   hidden">
+    <DownloadDialogBox className="md:flex items-center justify-between -ms-7 px-8 w-[380px]   hidden">
       <HomeIcon />
       <SearchIcon />
       <EventIcon />

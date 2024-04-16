@@ -7,8 +7,8 @@ import Comment from "@/components/Comment";
 
 const EventPost = () => {
   return (
-    <>
-      <div className="ml-18 text-sm">
+    <div className="border-b-4">
+      <div className="ml-18 text-sm pt-4">
         <span className="font-semibold ">Jonathan</span> commented on this.
       </div>
       <div className="flex items-start gap-2 px-6 py-4">
@@ -32,7 +32,7 @@ const EventPost = () => {
       <div>
         <Comment />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,9 +1,13 @@
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@breeze/ui/globals.css";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import TimelineFooter from "@/components/TimeLineFooter";
+import ReactQueryProvider from "@/components/Providers/ReactQueryProvider";
+import {Toaster} from "@breeze/ui";
+import {usePathname} from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ReactQueryProvider>
         <NavBar />
         {children}
+          <Toaster/>
         <TimelineFooter />
+      </ReactQueryProvider>
+
       </body>
     </html>
   );

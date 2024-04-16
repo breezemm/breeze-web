@@ -21,7 +21,6 @@ const DownloadDialogBox = ({
     <Dialog>
       <DialogTrigger className={cn("", className)}>{children}</DialogTrigger>
       <DialogOverlay className="bg-overlaycolor  backdrop-blur-sm" />
-
       <DialogContent
         style={{ borderRadius: "1rem" }}
         className="w-80  flex justify-center  flex-col items-center gap-12 p-16"

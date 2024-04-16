@@ -8,7 +8,7 @@ import { Button } from "@breeze/ui";
 import UpArrowIcon from "@/app/assets/icons/UpArrowIcon";
 import { cn } from "@/utils";
 
-const TipTap = () => {
+const CommentInput = () => {
   const [commentText, setCommentText] = useState("");
   const editor = useEditor({
     extensions: [
@@ -28,7 +28,7 @@ const TipTap = () => {
       <Button
         onClick={() => console.log("dat", commentText)}
         disabled={commentText.length <= 0}
-        className={cn("rounded-full w-8 h-8 p-1.5 bg-none")}
+        className="rounded-full w-8 h-8 p-1.5 bg-none"
       >
         <UpArrowIcon />
       </Button>
@@ -36,4 +36,4 @@ const TipTap = () => {
   );
 };
 
-export default TipTap;
+export default CommentInput;

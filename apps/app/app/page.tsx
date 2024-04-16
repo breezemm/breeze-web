@@ -1,6 +1,5 @@
-import Image from "next/image";
-import FeedScreen from "@/app/components/FeedScreen";
+import PublicTimeLine from "@/app/components/PublicTimeLine";
 
 export default function Home() {
-  return <FeedScreen />;
+  return <PublicTimeLine/>;
 }

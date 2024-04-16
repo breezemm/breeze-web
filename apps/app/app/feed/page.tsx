@@ -1,6 +1,14 @@
+'use client'
 import EventPost from "@/components/EventPost";
+
 const NewFeed = () => {
-  return <EventPost />;
+  return(
+      <div className="flex justify-center flex-col  items-center" >
+          <EventPost />
+          <EventPost />
+          <EventPost />
+      </div>
+  );
 };
 
 export default NewFeed;

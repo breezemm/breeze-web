@@ -6,12 +6,14 @@ import HeartIcon from "@/app/assets/icons/HeartIcon";
 import MessageIcon from "@/app/assets/icons/MessageIcon";
 import SaveIcon from "@/app/assets/icons/SaveIcon";
 import { TimeLineProps } from "@/interfaces/TimeLineData";
+import {formatDate} from "@/utils";
 
 const TimeLinePost = (props: { data: TimeLineProps }) => {
-  return (
+
+    return (
     <div className="flex px-6 py-4 border-b-4  gap-2 md:max-w-[375px]">
-      <div className="pt-1">
-        <Image src={ProfileImage} alt="profile" />
+      <div className="pt-1 rounded-full">
+          <Image src={props.data.user.profile_image !== '' ? props.data.user.profile_image : ProfileImage} width={40} height={40} className="rounded-full" alt="profile" />
       </div>
       <div className="flex flex-1 flex-col gap-4">
         <div>
@@ -20,7 +22,7 @@ const TimeLinePost = (props: { data: TimeLineProps }) => {
           </p>
           <p className="text-neutral-8">5m</p>
         </div>
-        <p className="text-neutral-10">breeze is finally OUT OF THE LAB.</p>
+        <p className="text-neutral-10">{props.data.description}</p>
 
         <Card className=" w-full md:w-[278px]">
           <CardHeader className="p-0">
@@ -29,12 +31,12 @@ const TimeLinePost = (props: { data: TimeLineProps }) => {
 
           <CardContent className="p-2">
             <p className="text-neutral-10 font-semibold">
-              breeze PUBLIC Launch
+                {props.data.name}
             </p>
           </CardContent>
 
           <CardFooter className="flex justify-between ps-2 pe-2 pb-2">
-            <p className="text-neutral-10">1 Mar (Tue)</p>
+            <p className="text-neutral-10">{formatDate(props.data.start_date)}</p>
             <p className="text-neutral-10 font-semibold">FREE</p>
           </CardFooter>
         </Card>

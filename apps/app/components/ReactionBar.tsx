@@ -10,7 +10,7 @@ export default function ReactionBar({ isComment }: { isComment: boolean }) {
   const pathname = usePathname();
 
   const handleComment = () => {
-    router.push("/comments");
+    router.push('events/1/comments');
   };
   return (
     <div className="flex justify-between py-2">

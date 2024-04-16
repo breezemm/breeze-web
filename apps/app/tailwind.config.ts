@@ -30,6 +30,7 @@ const config: Config = {
       grey: {
         1: "#4B4D4E",
       },
+      followButtonBackground:"#0095FF"
     },
     extend: {
       backgroundImage: {
