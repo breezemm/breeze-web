@@ -1,11 +1,15 @@
 import EventPost from "@/components/EventPost";
+import CommentInput from "@/components/CommentInput";
 
-const Page = () => {
+const CommentPage = () => {
     return (
-        <div className="flex  justify-center">
-            <EventPost/>
+        <div>
+            <EventPost />
+            <div className="flex justify-between ">
+                <CommentInput />
+            </div>
         </div>
     );
 };
 
-export default Page;
+export default CommentPage;
