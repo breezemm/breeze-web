@@ -6,13 +6,15 @@ import Link from "next/link";
 
 export default function login() {
   return (
-    <div className="md:flex flex-col flex-1 justify-center items-center">
-      <BreezeLogoIcon className="md:w-28 md:h-28 w-24 h-24 mb-5" />
-      <Link href="/newuser">
-        <Button className="w-64 mb-5">Create a new account</Button>
-      </Link>
+    <div className="flex flex-col justify-center items-center h-full px-4">
+      <div className="flex flex-col items-center">
+        <BreezeLogoIcon className="w-20 h-20 mb-5" />
+        <Button className="w-full md:w-64 mb-5" asChild>
+          <Link href="/newuser">Create a new account</Link>
+        </Button>
+      </div>
       <Link href="/olduser/login">
-        <p>I already have an account</p>
+        <p className="text-center">I already have an account</p>
       </Link>
     </div>
   );
