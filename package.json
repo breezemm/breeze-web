@@ -15,6 +15,7 @@
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
     "@types/bun": "^1.0.12",
+    "eslint": "^9.0.0",
     "husky": "^9.0.11",
     "prettier": "^3.2.5",
     "turbo": "latest"

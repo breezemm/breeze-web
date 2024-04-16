@@ -21,8 +21,8 @@ export default function RootLayout({
     <ReactQueryClientProvider>
       <html lang="en">
         <body className={inter.className}>
-          <NavBar />
-          {children}
+            <NavBar  />
+            {children}
         </body>
       </html>
     </ReactQueryClientProvider>
