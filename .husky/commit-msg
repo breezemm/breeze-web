@@ -1,1 +1,2 @@
+#bunx --no-install commitlint --edit $1 
 
