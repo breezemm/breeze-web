@@ -32,6 +32,13 @@ const config: Config = {
       },
       lightgray: "rgb(211,211,211)",
       darkgray: "#646668",
+      alertred: "#E51A2B",
+      bulletgray: "#646668",
+      softlightgray: "#E5E6E6",
+      availablegreen: "#6DB24D",
+      commingorange: "#EB8C47",
+      soldoutgray: "#97999B",
+      savedgreen: "#6DB24D",
     },
     extend: {
       backgroundImage: {

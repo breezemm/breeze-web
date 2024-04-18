@@ -3,7 +3,7 @@ import BackIcon from "@/app/assets/icons/BackIcon";
 import { cn } from "@/utils";
 import { Badge, Button } from "@breeze/ui";
 import Image from "next/image";
-import MuralArt from "@/app/assets/images/muralArtFestival.svg";
+import MidSummer2 from "@/app/assets/images/midSummer2.svg";
 import CalendarIcon from "@/app/assets/icons/CalendarIcon";
 import ClockIcon from "@/app/assets/icons/ClockIcon";
 import LocationIcon from "@/app/assets/icons/LocationIcon";
@@ -21,7 +21,7 @@ export default function MuralArtEvent() {
     setActivePill(pill);
   };
 
-  const isEventEnded = true;
+  const isEventEnded = false;
 
   const [showAdditionalText, setShowAdditionalText] = useState(false);
 
@@ -41,7 +41,7 @@ export default function MuralArtEvent() {
             <section className="text-darkgray max-w-[375px] flex flex-col items-center mt-2 mb-28 ">
               <div className="relative">
                 <Image
-                  src={MuralArt}
+                  src={MidSummer2}
                   alt="Mural Art Event photo"
                   className="w-[375px] "
                 />
@@ -136,7 +136,7 @@ export default function MuralArtEvent() {
               <hr className="border-lightgray mb-3 w-[375px]" />
               <Link href={"#"}>
                 <Badge className="w-80 h-11 p-3 gap-4 justify-center">
-                  Go to Dashboard
+                  My e-ticket
                 </Badge>
               </Link>
             </section>

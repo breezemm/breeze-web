@@ -3,7 +3,7 @@ import BackIcon from "@/app/assets/icons/BackIcon";
 import { cn } from "@/utils";
 import { Badge, Button } from "@breeze/ui";
 import Image from "next/image";
-import MuralArt from "@/app/assets/images/muralArtFestival.svg";
+import Songkran from "@/app/assets/images/songKran.svg";
 import CalendarIcon from "@/app/assets/icons/CalendarIcon";
 import ClockIcon from "@/app/assets/icons/ClockIcon";
 import LocationIcon from "@/app/assets/icons/LocationIcon";
@@ -11,7 +11,7 @@ import InformationIcon from "@/app/assets/icons/InformationIcon";
 import React, { useState } from "react";
 import Link from "next/link";
 
-export default function MuralArtEvent() {
+export default function SongkranEvent() {
   const handleGoBack = () => {
     window.history.back();
   };
@@ -41,7 +41,7 @@ export default function MuralArtEvent() {
             <section className="text-darkgray max-w-[375px] flex flex-col items-center mt-2 mb-28 ">
               <div className="relative">
                 <Image
-                  src={MuralArt}
+                  src={Songkran}
                   alt="Mural Art Event photo"
                   className="w-[375px] "
                 />
@@ -61,21 +61,20 @@ export default function MuralArtEvent() {
                       <CalendarIcon />
                     </span>
                     <span className="mt-1 ml-6" />
-                    May, 28 (Thursday), 2023
+                    Apr, 13 (Monday), 2023
                   </li>
                   <li className="flex items-start mb-5">
                     <span className="w-[18px]">
                       <ClockIcon />
                     </span>
-                    <span className="mt-1 ml-6" />
-                    10 am - 2 pm
+                    <span className="mt-1 ml-6" />6 am - 6 pm
                   </li>
                   <li className="flex items-start mb-5">
                     <span className="w-[18px]">
                       <LocationIcon />
                     </span>
                     <span className="mt-1 ml-6" />
-                    Myanmar Ahla Gallery
+                    Thailand
                   </li>
                   <li className="flex items-start mb-5">
                     <span className="w-[18px]">
@@ -83,9 +82,9 @@ export default function MuralArtEvent() {
                     </span>
                     <span className="mt-1 ml-6" />
                     <p>
-                      This is a brief description about Mural Art Festival. If
-                      you want to know more about this festival, you can check
-                      that out here by tapping &nbsp;
+                      Thai New Year or Songkran is the Thai New Year's national
+                      holiday. Songkran is on 13 April every year, but the
+                      holiday period &nbsp;
                       {!showAdditionalText && (
                         <span
                           className="cursor-pointer font-semibold text-black-1"
@@ -97,28 +96,9 @@ export default function MuralArtEvent() {
                       {showAdditionalText && (
                         <>
                           <span>
-                            this link. The Mural Art Festival is an annual
-                            celebration of creativity, culture, and community.
-                            Spanning several days, it brings together talented
-                            artists from around the world to transform blank
-                            walls into vibrant works of art. From stunning
-                            portraits to abstract designs, the festival
-                            showcases a diverse range of styles and techniques.
-                            Visitors can wander through the streets, taking in
-                            the colorful murals and experiencing the energy of
-                            live art creation. In addition to the main mural
-                            installations, the festival often features
-                            workshops, performances, and interactive exhibits,
-                            making it an immersive experience for art lovers of
-                            all ages. Whether you're a seasoned art enthusiast
-                            or just looking for something unique to explore, the
-                            Mural Art Festival offers a dynamic blend of
-                            inspiration and entertainment. Don't miss out on
-                            this opportunity to witness the power of art to
-                            transform spaces and bring communities together. Tap
-                            the link to dive deeper into the world of the Mural
-                            Art Festival and discover everything it has to
-                            offer!
+                            teems with an abundance of activities, traditions,
+                            and celebrations that extend for several days before
+                            and after the official date.
                           </span>
                           &nbsp;
                           <span

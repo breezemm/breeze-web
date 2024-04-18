@@ -3,7 +3,8 @@ import BackIcon from "@/app/assets/icons/BackIcon";
 import { cn } from "@/utils";
 import { Badge, Button } from "@breeze/ui";
 import Image from "next/image";
-import MuralArt from "@/app/assets/images/muralArtFestival.svg";
+import Songkran from "@/app/assets/images/songKran.svg";
+import Music808 from "@/app/assets/images/808Music.svg";
 import CalendarIcon from "@/app/assets/icons/CalendarIcon";
 import ClockIcon from "@/app/assets/icons/ClockIcon";
 import LocationIcon from "@/app/assets/icons/LocationIcon";
@@ -11,7 +12,7 @@ import InformationIcon from "@/app/assets/icons/InformationIcon";
 import React, { useState } from "react";
 import Link from "next/link";
 
-export default function MuralArtEvent() {
+export default function SongkranEvent() {
   const handleGoBack = () => {
     window.history.back();
   };
@@ -21,7 +22,7 @@ export default function MuralArtEvent() {
     setActivePill(pill);
   };
 
-  const isEventEnded = true;
+  const isEventEnded = false;
 
   const [showAdditionalText, setShowAdditionalText] = useState(false);
 
@@ -41,12 +42,12 @@ export default function MuralArtEvent() {
             <section className="text-darkgray max-w-[375px] flex flex-col items-center mt-2 mb-28 ">
               <div className="relative">
                 <Image
-                  src={MuralArt}
+                  src={Music808}
                   alt="Mural Art Event photo"
-                  className="w-[375px] "
+                  className="w-[375px] h-[180px]"
                 />
                 {isEventEnded && (
-                  <div className="absolute bottom-48 bg-alertred left-0 w-full h-10 p-2 gap-2 bg-black  text-center">
+                  <div className="absolute  bg-alertred left-0 w-full h-10 p-2 gap-2 bg-black  text-center">
                     <p className="text-white leading-6 text-base tracking-tight font-normal">
                       This event has ended.
                     </p>
@@ -61,21 +62,20 @@ export default function MuralArtEvent() {
                       <CalendarIcon />
                     </span>
                     <span className="mt-1 ml-6" />
-                    May, 28 (Thursday), 2023
+                    Nov, 11 (Sunday), 2023
                   </li>
                   <li className="flex items-start mb-5">
                     <span className="w-[18px]">
                       <ClockIcon />
                     </span>
-                    <span className="mt-1 ml-6" />
-                    10 am - 2 pm
+                    <span className="mt-1 ml-6" />5 pm - 11 pm
                   </li>
                   <li className="flex items-start mb-5">
                     <span className="w-[18px]">
                       <LocationIcon />
                     </span>
                     <span className="mt-1 ml-6" />
-                    Myanmar Ahla Gallery
+                    The One Entertainment Park
                   </li>
                   <li className="flex items-start mb-5">
                     <span className="w-[18px]">
@@ -83,9 +83,9 @@ export default function MuralArtEvent() {
                     </span>
                     <span className="mt-1 ml-6" />
                     <p>
-                      This is a brief description about Mural Art Festival. If
-                      you want to know more about this festival, you can check
-                      that out here by tapping &nbsp;
+                      808 Festival 2022, the 8th edition of annual EDM festival
+                      in Bangkok, will be held from 9 – 11 December 2022 at
+                      BITEC Bangna. &nbsp;
                       {!showAdditionalText && (
                         <span
                           className="cursor-pointer font-semibold text-black-1"
@@ -97,28 +97,13 @@ export default function MuralArtEvent() {
                       {showAdditionalText && (
                         <>
                           <span>
-                            this link. The Mural Art Festival is an annual
-                            celebration of creativity, culture, and community.
-                            Spanning several days, it brings together talented
-                            artists from around the world to transform blank
-                            walls into vibrant works of art. From stunning
-                            portraits to abstract designs, the festival
-                            showcases a diverse range of styles and techniques.
-                            Visitors can wander through the streets, taking in
-                            the colorful murals and experiencing the energy of
-                            live art creation. In addition to the main mural
-                            installations, the festival often features
-                            workshops, performances, and interactive exhibits,
-                            making it an immersive experience for art lovers of
-                            all ages. Whether you're a seasoned art enthusiast
-                            or just looking for something unique to explore, the
-                            Mural Art Festival offers a dynamic blend of
-                            inspiration and entertainment. Don't miss out on
-                            this opportunity to witness the power of art to
-                            transform spaces and bring communities together. Tap
-                            the link to dive deeper into the world of the Mural
-                            Art Festival and discover everything it has to
-                            offer!
+                            the esteemed venue for the 808 Festival 2022,
+                            promises an electrifying atmosphere for EDM
+                            enthusiasts. With its top-notch facilities and
+                            spacious grounds, attendees can immerse themselves
+                            in pulsating beats and vibrant energy. Get ready for
+                            an unforgettable fusion of music, lights, and
+                            excitement at this iconic location.
                           </span>
                           &nbsp;
                           <span
@@ -134,9 +119,9 @@ export default function MuralArtEvent() {
                 </ul>
               </div>
               <hr className="border-lightgray mb-3 w-[375px]" />
-              <Link href={"#"}>
+              <Link href={"/event/including-events/808-music/view-ticket"}>
                 <Badge className="w-80 h-11 p-3 gap-4 justify-center">
-                  Go to Dashboard
+                  View Ticket
                 </Badge>
               </Link>
             </section>
@@ -167,7 +152,7 @@ export default function MuralArtEvent() {
             </Link>
           </span>
           <h1 className=" self-center mr-[100px] font-bold text-xl mb-6">
-            Mural Festival
+            808 Music Festival
           </h1>
         </div>
 

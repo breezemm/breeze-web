@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { AspectRatio, Badge, Button } from "@breeze/ui";
 import MidSummer from "@/app/assets/images/midSummer.jpg";
+import MidSummer2 from "@/app/assets/images/midSummer2.svg";
 import MuralArt from "@/app/assets/images/muralArtFestival.svg";
 import Link from "next/link";
 import SongKran from "@/app/assets/images/songKran.svg";
@@ -144,16 +145,108 @@ export default function EventHavingPage() {
         );
       case "joined":
         return (
-          <div>
-            <section className="text-darkgray flex flex-col items-center mt-16">
-              <p>Create memories! </p>
-              <p>Join an event now and start the adventure!</p>
-              <Button
-                className="w-40 mt-6"
-                onClick={() => handlePillClick("launched")}
-              >
-                Join Event
-              </Button>
+          <div className="justify-center items-center">
+            {/* for may 2023*/}
+            <section className="flex flex-col justify-center items-center mt-4 ">
+              <h1 className="mr-[260px]  font-semibold text-lg mb-3 ">
+                May, 2023
+              </h1>
+
+              <div className="flex sm:flex-row mr-[75px]">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
+                  <div className="bg-lavender ">
+                    <Link href={"/event/including-events/mid-summer"}>
+                      <Image
+                        src={MidSummer2}
+                        alt="Mid Summer Event photo"
+                        className="w-32 h-20 rounded-sm"
+                      />
+                    </Link>
+                  </div>
+                  <div className="bg-lavenderblush ">
+                    <h1 className=" font-medium text-[15px] pt-2 ">
+                      Mid Summer
+                    </h1>
+                    <p className="  text-base leading-6 pt-5 ">25 May (Tue)</p>
+                  </div>
+                </div>
+              </div>
+
+              <hr className="border-lightgray w-[400px] mt-5 mb-5 " />
+
+              <div className="flex flex-row mr-[75px]">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
+                  <div className="bg-lavender ">
+                    <Link href={"/event/including-events/mural-art"}>
+                      <Image
+                        src={MuralArt}
+                        alt="Mural Art Event photo"
+                        className="w-32 h-20 rounded-sm"
+                      />
+                    </Link>
+                  </div>
+                  <div className="bg-lavenderblush ">
+                    <h1 className=" font-medium text-[15px] pt-2 ">
+                      Mural Art Festival
+                    </h1>
+                    <p className="  text-base leading-6 pt-5 ">28 May (Thur)</p>
+                  </div>
+                </div>
+              </div>
+              <hr className="border-lightgray w-[400px] mt-5 mb-5 " />
+            </section>
+
+            {/* for April 2023*/}
+            <section className="flex flex-col items-center mt-4 ">
+              <h1 className="mr-[260px] font-semibold text-lg mb-3 ">
+                April, 2023
+              </h1>
+
+              <div className="flex flex-row mr-[75px]">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
+                  <div className="bg-lavender ">
+                    <Link href={"/event/including-events/song-kran"}>
+                      <Image
+                        src={SongKran}
+                        alt="Song Kran Event photo"
+                        className="w-32 h-20 rounded-sm"
+                      />
+                    </Link>
+                  </div>
+                  <div className="bg-lavenderblush ">
+                    <h1 className=" font-medium text-[15px] pt-2 ">Songkran</h1>
+                    <p className="  text-base leading-6 pt-5 ">
+                      13 April (Mon)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <hr className="border-lightgray w-[400px] mt-5 mb-5 " />
+
+              <div className="flex flex-row mr-[75px]">
+                <div className="grid grid-cols-2 sm:grid-row-1 gap-4">
+                  <div className="bg-lavender ">
+                    <Link href={"#"}>
+                      <Image
+                        src={FireWorkShow}
+                        alt="FirwWrok show photo"
+                        className="w-32 h-20 rounded-sm"
+                      />
+                    </Link>
+                  </div>
+                  <div className="bg-lavenderblush ">
+                    <h1 className=" font-medium text-[15px] pt-2 ">
+                      FireWork Show
+                    </h1>
+                    <p className="  text-base leading-6 pt-5 ">
+                      11 April (Thur)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <hr className="border-lightgray w-[400px] mt-5 mb-5 " />
             </section>
           </div>
         );
