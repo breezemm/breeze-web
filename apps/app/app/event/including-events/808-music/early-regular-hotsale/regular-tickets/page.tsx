@@ -40,7 +40,7 @@ export default function RegularTickets() {
                   "h-7",
                   "rounded-[50px]",
                   "justify-center ml-3",
-                  "bg-availablegreen"
+                  "bg-availablegreen",
                 )}
               >
                 Available
@@ -64,7 +64,7 @@ export default function RegularTickets() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "GA",
-                }
+                },
               )}
               onClick={() => handleToggleChange("GA")}
             >
@@ -92,7 +92,7 @@ export default function RegularTickets() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VIP",
-                }
+                },
               )}
               onClick={() => handleToggleChange("VIP")}
             >
@@ -131,7 +131,7 @@ export default function RegularTickets() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VVIP",
-                }
+                },
               )}
               onClick={() => handleToggleChange("VVIP")}
             >
@@ -186,7 +186,7 @@ export default function RegularTickets() {
                   "cursor-not-allowed": !selectedToggle, // Disable badge if no toggle selected
                   "opacity-50": !selectedToggle,
                   "pointer-events-none": !selectedToggle,
-                }
+                },
               )}
             >
               Next

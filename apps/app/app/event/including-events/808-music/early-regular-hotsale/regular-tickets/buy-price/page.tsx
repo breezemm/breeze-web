@@ -107,7 +107,7 @@ export default function BuyPriceType1() {
                 "flex-col",
                 "border-black-1",
                 "w-[357px]",
-                "h-auto mt-6"
+                "h-auto mt-6",
               )}
             >
               <div className="flex flex-row mt-3">
@@ -164,9 +164,9 @@ export default function BuyPriceType1() {
                     {
                       "bg-soldoutgray cursor-not-allowed": !button.available,
                       "border-[3px] border-black-1": selectedButtons.includes(
-                        button.id
+                        button.id,
                       ),
-                    }
+                    },
                   )}
                   onClick={() => {
                     if (button.available) handleButtonClick(button.id);

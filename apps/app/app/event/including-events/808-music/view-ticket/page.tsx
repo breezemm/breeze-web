@@ -43,7 +43,7 @@ export default function ViewTicket() {
                 "h-auto",
                 {
                   "border-2 shadow-lg": isToggleSelected,
-                }
+                },
               )}
               onClick={handleToggleChange}
             >
@@ -103,7 +103,7 @@ export default function ViewTicket() {
                   "cursor-not-allowed": !isToggleSelected, // Disable badge if not selected
                   "opacity-50": !isToggleSelected,
                   "pointer-events-none": !isToggleSelected,
-                }
+                },
               )}
             >
               Next

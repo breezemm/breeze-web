@@ -42,7 +42,7 @@ export default function ViewTicket2() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "GA",
-                }
+                },
               )}
               onClick={() => handleToggleChange("GA")}
             >
@@ -70,7 +70,7 @@ export default function ViewTicket2() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VIP",
-                }
+                },
               )}
               onClick={() => handleToggleChange("VIP")}
             >
@@ -109,7 +109,7 @@ export default function ViewTicket2() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VVIP",
-                }
+                },
               )}
               onClick={() => handleToggleChange("VVIP")}
             >
@@ -164,7 +164,7 @@ export default function ViewTicket2() {
                   "cursor-not-allowed": !selectedToggle, // Disable badge if no toggle selected
                   "opacity-50": !selectedToggle,
                   "pointer-events-none": !selectedToggle,
-                }
+                },
               )}
             >
               Next

@@ -83,7 +83,7 @@ export default function EarlyRegularHot() {
                   "justify-between",
                   "p-3",
                   "mt-4",
-                  "mb-4"
+                  "mb-4",
                 )}
               >
                 <section className="">
@@ -95,7 +95,7 @@ export default function EarlyRegularHot() {
                         "h-7",
                         "rounded-[50px]",
                         "justify-center ml-3",
-                        getBadgeColor(badgeTexts[0])
+                        getBadgeColor(badgeTexts[0]),
                       )}
                     >
                       {badgeTexts[0]}
@@ -129,7 +129,7 @@ export default function EarlyRegularHot() {
                   "justify-between",
                   "p-3",
                   "mt-4",
-                  "mb-4"
+                  "mb-4",
                 )}
               >
                 <section className="">
@@ -141,7 +141,7 @@ export default function EarlyRegularHot() {
                         "h-7",
                         "rounded-[50px]",
                         "justify-center ml-3",
-                        getBadgeColor(badgeTexts[0])
+                        getBadgeColor(badgeTexts[0]),
                       )}
                     >
                       {badgeTexts[0]}
@@ -175,7 +175,7 @@ export default function EarlyRegularHot() {
                   "justify-between",
                   "p-3",
                   "mt-4",
-                  "mb-4"
+                  "mb-4",
                 )}
               >
                 <section className="">
@@ -187,7 +187,7 @@ export default function EarlyRegularHot() {
                         "h-7",
                         "rounded-[50px]",
                         "justify-center ml-3",
-                        getBadgeColor(badgeTexts[1])
+                        getBadgeColor(badgeTexts[1]),
                       )}
                     >
                       {badgeTexts[1]}
