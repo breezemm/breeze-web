@@ -1,4 +1,3 @@
-import Image from "next/image";
 import FeedScreen from "@/app/components/FeedScreen";
 import React from "react";
 
