@@ -51,7 +51,7 @@ function ResetPassword() {
 
   const resetPasswordForm = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(
-      formSchema.pick({ newPassword: true, confirmPassword: true })
+      formSchema.pick({ newPassword: true, confirmPassword: true }),
     ),
     defaultValues: {
       newPassword: "",
