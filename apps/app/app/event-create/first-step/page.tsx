@@ -1,26 +1,16 @@
 "use client";
 import PageTitle from "@/app/components/EventCreate/PageTitle";
-import {
-  Button,
-  DatePickerDemo,
-  Form,
-  FormCombobox,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-  Input,
-  Label,
-} from "@breeze/ui";
+import { Button, Form, FormCombobox, FormDate, FormInput } from "@breeze/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useQuery } from "@tanstack/react-query";
-import { FormProvider, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { getDDLCities } from "./-api/city";
 import { CityData } from "@/interfaces/CityData";
 import { SelectOption } from "@/interfaces/SelectOption";
+import { tempcities } from "./-api/tempdata";
+import { format } from "date-fns";
+import { useRouter } from "next/navigation";
 
 interface EventCreateFirstStepForm {
   name: string;
@@ -36,9 +26,11 @@ const formSchema = z.object({
   start_time: z.string().nonempty(),
   end_time: z.string().nonempty(),
   place: z.string().nonempty(),
+  city: z.number(),
 });
 
 export default function EventCreateFirstStep() {
+  const router = useRouter();
   const methods = useForm<z.infer<typeof formSchema>>({
     mode: "onChange",
     resolver: zodResolver(formSchema),
@@ -51,7 +43,16 @@ export default function EventCreateFirstStep() {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {};
+  const onSubmit = (data: z.infer<typeof formSchema>) => {
+    localStorage.setItem(
+      "event_first_step_data",
+      JSON.stringify({
+        ...data,
+        start_date: format(data.start_date, "yyyy-MM-dd"),
+      })
+    );
+    router.push("/event-create/second-step");
+  };
 
   return (
     <main className="flex flex-col md:items-center">
@@ -62,105 +63,42 @@ export default function EventCreateFirstStep() {
         <Form {...methods}>
           <form noValidate onSubmit={methods.handleSubmit(onSubmit)}>
             <div className="mb-10">
-              <FormField
-                control={methods.control}
+              <FormInput
                 name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="name">Event Name</FormLabel>
-                    <FormControl>
-                      <Input
-                        id="name"
-                        placeholder="Event Name"
-                        {...field}
-                        className="border-b border-neutral-10 px-0"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                label="Event Name"
+                placeholder="Event Name"
               />
             </div>
             <div className="mb-10">
-              <FormField
-                control={methods.control}
-                name="start_date"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col">
-                    <FormLabel>Start Date</FormLabel>
-                    <DatePickerDemo />
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              <FormDate name="start_date" label="Start Date" />
             </div>
             <div className="mb-10 flex gap-10 items-center">
-              <FormField
-                control={methods.control}
-                name="start_time"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="name">Start Time</FormLabel>
-                    <FormControl>
-                      <Input
-                        id="start_time"
-                        type="time"
-                        {...field}
-                        className="border-b border-neutral-10 px-0"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              <FormInput name="start_time" type="time" label="Start Time" />
               <p>to</p>
-              <FormField
-                control={methods.control}
-                name="end_time"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="end_time">End Time</FormLabel>
-                    <FormControl>
-                      <Input
-                        id="end_time"
-                        type="time"
-                        {...field}
-                        className="border-b border-neutral-10 px-0"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              <FormInput name="end_time" type="time" label="End Time" />
             </div>
             <div className="mb-10">
-              <FormField
-                control={methods.control}
+              <FormInput
                 name="place"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel htmlFor="place">Place/Address</FormLabel>
-                    <FormControl>
-                      <Input
-                        id="place"
-                        placeholder="Place/Address"
-                        {...field}
-                        className="border-b border-neutral-10 px-0"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
+                label="Place/Address"
+                placeholder="Place/Address"
               />
             </div>
             <div className="mb-10">
               <FormCombobox
                 name="city"
-                options={cities as SelectOption[]}
                 label="City"
+                // options={cities as SelectOption[]}
+                options={tempcities as SelectOption[]}
               />
             </div>
-            <Button className="w-full">Next</Button>
+            <Button
+              type="submit"
+              className="w-full"
+              // disabled={!methods.formState.isValid}
+            >
+              Next
+            </Button>
           </form>
         </Form>
       </div>
