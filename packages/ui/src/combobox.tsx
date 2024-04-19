@@ -28,7 +28,7 @@ interface FormComboboxProps {
   label?: string;
   btnClassName?: string;
   options: {
-    value: string;
+    value: string | number;
     label: string;
   }[];
   formDescription?: string;

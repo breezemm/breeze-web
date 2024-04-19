@@ -22,10 +22,15 @@ export * from "./popover";
 export * from "./contextmenu";
 export * from "./collapsibleDemo";
 export * from "./comboboxDemo";
-export * from "./combobox";
 export * from "./carousel";
 export * from "./checkbox";
 export * from "./progress";
 export * from "./breadcrumb";
 export * from "./table";
 export * from "./switch";
+
+//Form Components
+export * from "./form-components/form-input";
+export * from "./combobox";
+export * from "./form-components/form-date";
+export * from "./form-components/form-textarea";
