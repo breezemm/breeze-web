@@ -4,8 +4,17 @@ import CameraIcon from "@/app/assets/icons/CameraIcon";
 import { Button, Input } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { useState } from "react";
 
-export default function username() {
+export default function userName() {
+  const [username, setUsername] = useState("");
+
+  const handleUsernameChange = (event: any) => {
+    setUsername(event.target.value);
+  };
+
+  const isUserNameValid = username !== "";
+
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
       <Button size="icon" className="bg-neutral-10 rounded-full mb-5" asChild>
@@ -35,11 +44,19 @@ export default function username() {
         placeholder="Username"
         type="text"
         name="username"
+        value={username}
+        onChange={handleUsernameChange}
         className="mb-32 mt-5"
       />
-      <Button className="w-full" asChild>
-        <Link href="/newuser/user-birth">Next</Link>
-      </Button>
+      {isUserNameValid ? (
+        <Button className="w-full" asChild>
+          <Link href="/newuser/user-birth">Next</Link>
+        </Button>
+      ) : (
+        <Button className="w-full" disabled>
+          Next
+        </Button>
+      )}
     </div>
   );
 }

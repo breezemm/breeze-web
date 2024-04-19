@@ -1,5 +1,4 @@
 import React from "react";
-import { LuDownload } from "react-icons/lu";
 import DownloadDialogBox from "@/components/DownloadDialogBox";
 import Link from "next/link";
 import { Button } from "@breeze/ui";
@@ -9,8 +8,7 @@ const DownloadButton = () => {
       <DownloadDialogBox>
         <Button
           className="bg-neutral-9 font-semibold  items-center justify-center  text-neutral-1 hidden h-11 w-40 rounded-md  text-center  md:flex "
-          asChild
-        >
+          asChild>
           <Link href="/login">Login</Link>
         </Button>
 

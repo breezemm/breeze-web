@@ -4,8 +4,17 @@ import GenderIcon from "@/app/assets/icons/GenderIcon";
 import { Button } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import React, { useState } from "react";
 
 export default function usergender() {
+  const [selectedGender, setSelectedGender] = useState(null);
+
+  const handleGenderSelection = (gender: any) => {
+    setSelectedGender(gender);
+  };
+
+  const isGenderSelected = selectedGender !== null;
+
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
       <Button size="icon" className="bg-neutral-10 rounded-full mb-5" asChild>
@@ -27,21 +36,26 @@ export default function usergender() {
       <div className="flex justify-center gap-4">
         <Button
           name="male"
-          className="bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white"
-        >
+          className={`bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white ${selectedGender === "male" ? "bg-neutral-10 text-white" : ""}`}
+          onClick={() => handleGenderSelection("male")}>
           Male
         </Button>
         <Button
           name="female"
-          className="bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white"
-        >
+          className={`bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white ${selectedGender === "female" ? "bg-neutral-10 text-white" : ""}`}
+          onClick={() => handleGenderSelection("female")}>
           Female
         </Button>
       </div>
-
-      <Button className="w-full mt-36" asChild>
-        <Link href="/newuser/user-city">Next</Link>
-      </Button>
+      {!isGenderSelected ? (
+        <Button className="w-full mt-36" disabled>
+          <Link href="/newuser/user-city">Next</Link>
+        </Button>
+      ) : (
+        <Button className="w-full mt-36" asChild>
+          <Link href="/newuser/user-city">Next</Link>
+        </Button>
+      )}
     </div>
   );
 }

@@ -3,9 +3,15 @@
 import { Button, Input } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 export default function verifycode() {
+  const [verifyCode, setVerifyCode] = useState("");
+  const handleVerifyCodeChange = (e: any) => {
+    setVerifyCode(e.target.value);
+  };
+
+  const isDisabledButton = verifyCode !== "";
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
       <Button size="icon" className="bg-neutral-10 rounded-full mb-5" asChild>
@@ -20,7 +26,13 @@ export default function verifycode() {
           <span className="font-bold"> edit email</span>
         </Link>
       </p>
-      <Input placeholder="verification code" className="mb-12" type="text" />
+      <Input
+        placeholder="verification code"
+        className="mb-12"
+        type="text"
+        value={verifyCode}
+        onChange={handleVerifyCodeChange}
+      />
 
       <p className="flex justify-center">
         You can request a new code in
@@ -30,9 +42,16 @@ export default function verifycode() {
       <p className="flex justify-center mb-36">
         <u>Request</u>
       </p>
-      <Button className="w-full" asChild>
-        <Link href="/olduser/forgotpassword/resetpassword">Done</Link>
-      </Button>
+
+      {isDisabledButton ? (
+        <Button className="w-full" asChild>
+          <Link href="/olduser/forgotpassword/resetpassword">Done</Link>
+        </Button>
+      ) : (
+        <Button className="w-full" disabled>
+          <Link href="/olduser/forgotpassword/resetpassword">Done</Link>
+        </Button>
+      )}
     </div>
   );
 }

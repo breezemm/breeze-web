@@ -16,14 +16,17 @@ export default function olduser() {
       <h3 className="mb-5 font-bold text-xl">Log In to your account</h3>
       <p className="mb-9">Welcome back!</p>
 
-      <Input placeholder="Email" className="mb-9" type="email" />
-      <Input placeholder="Password" className="mb-9" type="password" />
-      <Link href="/olduser/forgotpassword/email">
-        <p className="font-bold mb-36">Forget Password?</p>
-      </Link>
-      <Button asChild className="w-full">
-        <Link href="/">Login</Link>
-      </Button>
+      <form action="">
+        <Input placeholder="Email" className="mb-9" type="email" />
+        <Input placeholder="Password" className="mb-9" type="password" />
+        <Link href="/olduser/forgotpassword/email">
+          <p className="font-bold mb-36">Forget Password?</p>
+        </Link>
+
+        <Button asChild className="w-full" type="submit">
+          <Link href="/">Login</Link>
+        </Button>
+      </form>
     </div>
   );
 }

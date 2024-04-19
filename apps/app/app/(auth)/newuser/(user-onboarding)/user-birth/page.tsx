@@ -4,8 +4,17 @@ import BirthdayCakeIcon from "@/app/assets/icons/BirthdayCakeIcon";
 import { Button, Input } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import React, { useState } from "react";
 
 export default function userbirth() {
+  const [birthday, setBirthday] = useState("");
+
+  const handleBirthdayChange = (event: any) => {
+    setBirthday(event.target.value);
+  };
+
+  const isBirthdayValid = birthday.trim() !== "";
+
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
       <Button size="icon" className="bg-neutral-10 rounded-full mb-5" asChild>
@@ -29,10 +38,18 @@ export default function userbirth() {
         type="date"
         name="userbirth"
         className="mb-44 mt-5"
+        value={birthday}
+        onChange={handleBirthdayChange}
       />
-      <Button className="w-full" asChild>
-        <Link href="/newuser/user-gender">Next</Link>
-      </Button>
+      {!isBirthdayValid ? (
+        <Button className="w-full" disabled>
+          <Link href="/newuser/user-gender">Next</Link>
+        </Button>
+      ) : (
+        <Button className="w-full" asChild>
+          <Link href="/newuser/user-gender">Next</Link>
+        </Button>
+      )}
     </div>
   );
 }
