@@ -3,12 +3,12 @@ import {
   DialogContent,
   DialogOverlay,
   DialogTrigger,
+  cn,
 } from "@breeze/ui";
 
 import AppleStore from "@/app/assets/apple_store.svg";
 import GoogleStore from "@/app/assets/google_store.svg";
 import Image from "next/image";
-import { cn } from "@/utils";
 
 const DownloadDialogBox = ({
   children,
