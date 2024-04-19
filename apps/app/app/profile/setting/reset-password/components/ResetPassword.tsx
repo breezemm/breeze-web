@@ -27,10 +27,7 @@ const formSchema = z.object({
     .min(6, { message: "Password must be at least 6 characters long." }),
   confirmPassword: z
     .string()
-    .min(6, { message: "Password must be at least 6 characters long." })
-    .refine((value) => value === formSchema.newPassword, {
-      message: "Passwords do not match",
-    }),
+    .min(6, { message: "Password must be at least 6 characters long." }),
 });
 
 function ResetPassword() {
@@ -54,7 +51,7 @@ function ResetPassword() {
 
   const resetPasswordForm = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(
-      formSchema.pick({ newPassword: true, confirmPassword: true }),
+      formSchema.pick({ newPassword: true, confirmPassword: true })
     ),
     defaultValues: {
       newPassword: "",
@@ -71,25 +68,16 @@ function ResetPassword() {
   };
 
   const onSubmitEmail = async (data: z.infer<typeof formSchema>) => {
-    // Handle submission for email form
     console.log(data);
     setStep(2);
   };
 
   const onSubmitVerification = async (data: z.infer<typeof formSchema>) => {
-    // Handle submission for verification form
     console.log(data);
     setStep(3);
   };
 
   const onSubmitResetPassword = async (data: z.infer<typeof formSchema>) => {
-    // if (data.newPassword !== data.confirmPassword) {
-    //   // Passwords don't match, handle accordingly (display error message, etc.)
-    //   console.log("Passwords don't match");
-    //   return;
-    // }
-
-    // Handle submission for reset password form
     console.log(data);
     setStep(4);
   };
