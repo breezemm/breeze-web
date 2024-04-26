@@ -27,3 +27,5 @@ export * from "./progress";
 export * from "./breadcrumb";
 export * from "./table";
 export * from "./switch";
+export * from "./toggle";
+export * from "./alert";
