@@ -13,10 +13,13 @@ import {
   Toggle,
 } from "@breeze/ui";
 import { cn } from "@/utils";
+import { useRouter } from "next/navigation";
 
 export default function EarlyRegularHot() {
+  const router = useRouter();
+
   const handleGoBack = () => {
-    window.history.back();
+    router.back();
   };
   const [badgeTexts, setBadgeTexts] = useState(["", "", ""]);
 
@@ -71,7 +74,7 @@ export default function EarlyRegularHot() {
           <AccordionItem value="item-1">
             <Link
               href={
-                badgeTexts[0].includes("Available")
+                badgeTexts[2].includes("Available")
                   ? "/event/including-events/808-music/early-regular-hotsale/early-tickets"
                   : "#"
               }
@@ -83,7 +86,7 @@ export default function EarlyRegularHot() {
                   "justify-between",
                   "p-3",
                   "mt-4",
-                  "mb-4",
+                  "mb-4"
                 )}
               >
                 <section className="">
@@ -95,10 +98,10 @@ export default function EarlyRegularHot() {
                         "h-7",
                         "rounded-[50px]",
                         "justify-center ml-3",
-                        getBadgeColor(badgeTexts[0]),
+                        getBadgeColor(badgeTexts[2])
                       )}
                     >
-                      {badgeTexts[0]}
+                      {badgeTexts[2]}
                     </Badge>
                   </h1>
                   <p className="font-normal text-base leading-6 text-bulletgray tracking-wider gap-4 mt-3">
@@ -129,7 +132,7 @@ export default function EarlyRegularHot() {
                   "justify-between",
                   "p-3",
                   "mt-4",
-                  "mb-4",
+                  "mb-4"
                 )}
               >
                 <section className="">
@@ -141,7 +144,7 @@ export default function EarlyRegularHot() {
                         "h-7",
                         "rounded-[50px]",
                         "justify-center ml-3",
-                        getBadgeColor(badgeTexts[0]),
+                        getBadgeColor(badgeTexts[0])
                       )}
                     >
                       {badgeTexts[0]}
@@ -175,7 +178,7 @@ export default function EarlyRegularHot() {
                   "justify-between",
                   "p-3",
                   "mt-4",
-                  "mb-4",
+                  "mb-4"
                 )}
               >
                 <section className="">
@@ -187,7 +190,7 @@ export default function EarlyRegularHot() {
                         "h-7",
                         "rounded-[50px]",
                         "justify-center ml-3",
-                        getBadgeColor(badgeTexts[1]),
+                        getBadgeColor(badgeTexts[1])
                       )}
                     >
                       {badgeTexts[1]}

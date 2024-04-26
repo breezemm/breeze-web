@@ -27,7 +27,11 @@ export default function BuySuccessful() {
         You have bought the ticket.
       </p>
       <span className="p-20">
-        <Image src={Congratulation} className="w-[70px] h-[70px] " />
+        <Image
+          src={Congratulation}
+          alt="Congratulation Icon"
+          className="w-[70px] h-[70px] "
+        />
       </span>
       <p className="font-normal text-base leading-6 gap-4 mb-4 ">
         See you at the

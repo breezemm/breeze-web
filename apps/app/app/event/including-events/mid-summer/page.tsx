@@ -10,17 +10,21 @@ import LocationIcon from "@/app/assets/icons/LocationIcon";
 import InformationIcon from "@/app/assets/icons/InformationIcon";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-export default function MuralArtEvent() {
+export default function MidSummerEvent() {
+  const router = useRouter();
+
   const handleGoBack = () => {
-    window.history.back();
+    router.back();
   };
-  const [activePill, setActivePill] = useState("about");
+  const [activePill, setActivePill] = useState<"about" | "community">("about");
 
-  const handlePillClick = (pill: React.SetStateAction<string>) => {
+  const handlePillClick = (
+    pill: React.SetStateAction<"about" | "community">
+  ) => {
     setActivePill(pill);
   };
-
   const isEventEnded = false;
 
   const [showAdditionalText, setShowAdditionalText] = useState(false);

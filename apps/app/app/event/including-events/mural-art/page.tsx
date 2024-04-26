@@ -10,14 +10,19 @@ import LocationIcon from "@/app/assets/icons/LocationIcon";
 import InformationIcon from "@/app/assets/icons/InformationIcon";
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function MuralArtEvent() {
-  const handleGoBack = () => {
-    window.history.back();
-  };
-  const [activePill, setActivePill] = useState("about");
+  const router = useRouter();
 
-  const handlePillClick = (pill: React.SetStateAction<string>) => {
+  const handleGoBack = () => {
+    router.back();
+  };
+  const [activePill, setActivePill] = useState<"about" | "community">("about");
+
+  const handlePillClick = (
+    pill: React.SetStateAction<"about" | "community">
+  ) => {
     setActivePill(pill);
   };
 

@@ -3,10 +3,13 @@ import BackIcon from "@/app/assets/icons/BackIcon";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Badge, Checkbox, Toggle } from "@breeze/ui";
+import { useRouter } from "next/navigation";
 
 export default function BuyFree() {
+  const router = useRouter();
+
   const handleGoBack = () => {
-    window.history.back();
+    router.back();
   };
 
   const [isChecked, setIsChecked] = useState(false);

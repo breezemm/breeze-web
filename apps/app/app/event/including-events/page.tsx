@@ -11,9 +11,13 @@ import FireWorkShow from "@/app/assets/images/fireworkShow.svg";
 import { cn } from "@/utils";
 
 export default function EventHavingPage() {
-  const [activePill, setActivePill] = useState("launched");
+  const [activePill, setActivePill] = useState<
+    "launched" | "upcoming" | "joined" | "saved"
+  >("launched");
 
-  const handlePillClick = (pill: React.SetStateAction<string>) => {
+  const handlePillClick = (
+    pill: React.SetStateAction<"launched" | "upcoming" | "joined" | "saved">
+  ) => {
     setActivePill(pill);
   };
 

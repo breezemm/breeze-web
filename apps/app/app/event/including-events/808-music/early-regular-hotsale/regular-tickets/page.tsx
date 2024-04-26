@@ -4,15 +4,22 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Badge, Toggle } from "@breeze/ui";
 import { cn } from "@/utils";
+import { useRouter } from "next/navigation";
 
 export default function RegularTickets() {
+  const router = useRouter();
+
   const handleGoBack = () => {
-    window.history.back();
+    router.back();
   };
 
-  const [selectedToggle, setSelectedToggle] = useState(null);
+  const [selectedToggle, setSelectedToggle] = useState<"GA" | "VIP" | "VVIP">(
+    null
+  );
 
-  const handleToggleChange = (toggle: string | React.SetStateAction<null>) => {
+  const handleToggleChange = (
+    toggle: React.SetStateAction<"GA" | "VIP" | "VVIP">
+  ) => {
     setSelectedToggle(toggle);
   };
 
@@ -40,7 +47,7 @@ export default function RegularTickets() {
                   "h-7",
                   "rounded-[50px]",
                   "justify-center ml-3",
-                  "bg-availablegreen",
+                  "bg-availablegreen"
                 )}
               >
                 Available
@@ -64,7 +71,7 @@ export default function RegularTickets() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "GA",
-                },
+                }
               )}
               onClick={() => handleToggleChange("GA")}
             >
@@ -92,7 +99,7 @@ export default function RegularTickets() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VIP",
-                },
+                }
               )}
               onClick={() => handleToggleChange("VIP")}
             >
@@ -131,7 +138,7 @@ export default function RegularTickets() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VVIP",
-                },
+                }
               )}
               onClick={() => handleToggleChange("VVIP")}
             >
@@ -186,7 +193,7 @@ export default function RegularTickets() {
                   "cursor-not-allowed": !selectedToggle, // Disable badge if no toggle selected
                   "opacity-50": !selectedToggle,
                   "pointer-events-none": !selectedToggle,
-                },
+                }
               )}
             >
               Next

@@ -4,10 +4,13 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Badge, Toggle } from "@breeze/ui";
 import { cn } from "@/utils";
+import { useRouter } from "next/navigation";
 
 export default function ViewTicket() {
+  const router = useRouter();
+
   const handleGoBack = () => {
-    window.history.back();
+    router.back();
   };
 
   const [isToggleSelected, setIsToggleSelected] = useState(false);
@@ -43,7 +46,7 @@ export default function ViewTicket() {
                 "h-auto",
                 {
                   "border-2 shadow-lg": isToggleSelected,
-                },
+                }
               )}
               onClick={handleToggleChange}
             >
@@ -103,7 +106,7 @@ export default function ViewTicket() {
                   "cursor-not-allowed": !isToggleSelected, // Disable badge if not selected
                   "opacity-50": !isToggleSelected,
                   "pointer-events-none": !isToggleSelected,
-                },
+                }
               )}
             >
               Next

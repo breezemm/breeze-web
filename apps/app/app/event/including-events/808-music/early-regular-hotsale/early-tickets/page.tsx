@@ -10,9 +10,13 @@ export default function EarlyTicket() {
     window.history.back();
   };
 
-  const [selectedToggle, setSelectedToggle] = useState(null);
+  const [selectedToggle, setSelectedToggle] = useState<"GA" | "VIP" | "VVIP">(
+    null
+  );
 
-  const handleToggleChange = (toggle: string | React.SetStateAction<null>) => {
+  const handleToggleChange = (
+    toggle: React.SetStateAction<"GA" | "VIP" | "VVIP">
+  ) => {
     setSelectedToggle(toggle);
   };
 
@@ -40,7 +44,7 @@ export default function EarlyTicket() {
                   "h-7",
                   "rounded-[50px]",
                   "justify-center ml-3",
-                  "bg-availablegreen",
+                  "bg-availablegreen"
                 )}
               >
                 Available
@@ -64,7 +68,7 @@ export default function EarlyTicket() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "GA",
-                },
+                }
               )}
               onClick={() => handleToggleChange("GA")}
             >
@@ -92,7 +96,7 @@ export default function EarlyTicket() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VIP",
-                },
+                }
               )}
               onClick={() => handleToggleChange("VIP")}
             >
@@ -131,7 +135,7 @@ export default function EarlyTicket() {
                 "h-auto mt-6",
                 {
                   "border-[3px] shadow-lg": selectedToggle === "VVIP",
-                },
+                }
               )}
               onClick={() => handleToggleChange("VVIP")}
             >
@@ -186,7 +190,7 @@ export default function EarlyTicket() {
                   "cursor-not-allowed": !selectedToggle, // Disable badge if no toggle selected
                   "opacity-50": !selectedToggle,
                   "pointer-events-none": !selectedToggle,
-                },
+                }
               )}
             >
               Next
