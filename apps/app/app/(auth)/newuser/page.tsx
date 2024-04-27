@@ -1,18 +1,34 @@
 "use client";
 
+import { userDataStore } from "@/store/User-Data-Store";
 import { Button, Input } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import React, { useState } from "react";
+import { z } from "zod";
+
+// Define Zod schema for email validation
+const emailSchema = z.string().email("Invalid email address");
 
 export default function newUser() {
-  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(false);
 
-  const handleEmailChange = (event: any) => {
-    setEmail(event.target.value);
+  const { userEmail, updateUserEmail } = userDataStore((state) => ({
+    userEmail: state.email,
+    updateUserEmail: state.updateUserEmail,
+  }));
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = event.target.value;
+    updateUserEmail(newEmail);
+    validateEmail(newEmail);
   };
 
-  const isEmailValid = email !== "";
+  const validateEmail = (value: string) => {
+    const validationResult = emailSchema.safeParse(value);
+    setIsValidEmail(validationResult.success);
+  };
+
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
       <Button size="icon" className="bg-neutral-10 rounded-full mb-5" asChild>
@@ -26,16 +42,16 @@ export default function newUser() {
         placeholder="Email"
         className="mb-48"
         type="email"
-        value={email}
+        value={userEmail}
         onChange={handleEmailChange}
       />
 
-      {isEmailValid ? (
-        <Button className="w-full" asChild>
+      {isValidEmail ? (
+        <Button className="w-full mt-64" asChild>
           <Link href="/newuser/email-verify">Next</Link>
         </Button>
       ) : (
-        <Button className="w-full" disabled>
+        <Button className="w-full mt-64" disabled>
           Next
         </Button>
       )}

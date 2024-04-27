@@ -10,7 +10,8 @@ import Sport from "@/app/assets/images/Football.png";
 import Education from "@/app/assets/images/Education.png";
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
+import { userDataStore } from "@/store/User-Data-Store";
 
 interface Option {
   id: string;
@@ -39,22 +40,25 @@ const options: Option[] = [
 ];
 
 export default function UserSelection() {
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
+  const { userFavourite, updateUserFavourite } = userDataStore((state) => ({
+    userFavourite: state.userFavourite,
+    updateUserFavourite: state.updateUserFavourite,
+  }));
 
   const handleOptionSelection = (optionId: string) => {
-    if (selectedOptions.includes(optionId)) {
-      setSelectedOptions(
-        selectedOptions.filter((selectedOption) => selectedOption !== optionId)
+    if (userFavourite.includes(optionId)) {
+      updateUserFavourite(
+        userFavourite.filter((selectedOption) => selectedOption !== optionId)
       );
     } else {
-      if (selectedOptions.length < 1) {
-        setSelectedOptions([...selectedOptions, optionId]);
+      if (userFavourite.length < 1) {
+        updateUserFavourite([...userFavourite, optionId]);
       }
     }
   };
 
-  const isOptionSelected = selectedOptions.length > 0;
-  const isMaxSelection = selectedOptions.length === 1;
+  const isOptionSelected = userFavourite.length > 0;
+  const isMaxSelection = userFavourite.length === 1;
 
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
@@ -76,18 +80,18 @@ export default function UserSelection() {
               name={option.name}
               image={option.image}
               alt={option.alt}
-              selected={selectedOptions.includes(option.id)}
+              selected={userFavourite.includes(option.id)}
               onClick={() => handleOptionSelection(option.id)}
             />
           ))}
         </div>
       </div>
       {!isOptionSelected || !isMaxSelection ? (
-        <Button className="w-full mt-36" disabled>
+        <Button className="w-full mt-64" disabled>
           <Link href="/">Next</Link>
         </Button>
       ) : (
-        <Button className="w-full mt-36" asChild>
+        <Button className="w-full mt-64" asChild>
           <Link href="/">Next</Link>
         </Button>
       )}

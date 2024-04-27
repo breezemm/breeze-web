@@ -3,7 +3,7 @@
 import * as React from "react";
 import { format } from "date-fns";
 import { ChevronDown } from "lucide-react";
-
+// import { userDataStore } from "../../../apps/app/store/User-Data-Store";
 import { Button } from "./button";
 import { Calendar } from "./date-picker/calendar";
 import {
@@ -15,6 +15,14 @@ import { cn } from "./utils/cn";
 
 export function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>();
+  // const { userBithday, updateUserBirthday } = userDataStore((state) => ({
+  //   userBithday: state.userBirth,
+  //   updateUserBirthday: state.updateUserBirthday,
+  // }));
+
+  // const handleDateData = () => {
+  //   updateUserBirthday(date);
+  // };
 
   return (
     <Popover>
@@ -22,10 +30,9 @@ export function DatePickerDemo() {
         <Button
           variant={"outline"}
           className={cn(
-            "w-[180px] rounded-none border border-black font-normal",
-            !date && "text-muted-foreground",
-          )}
-        >
+            "w-[250px] rounded-none border border-black font-normal mt-5 mb-16",
+            !date && "text-muted-foreground"
+          )}>
           {date ? (
             format(date, "PPP")
           ) : (

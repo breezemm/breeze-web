@@ -1,19 +1,43 @@
 "use client";
 
 import GenderIcon from "@/app/assets/icons/GenderIcon";
+import { userDataStore } from "@/store/User-Data-Store";
 import { Button } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import React, { useState } from "react";
+import { z } from "zod";
+
+// Define Zod schema for gender validation
+const genderSchema = z.enum(["male", "female"]);
 
 export default function usergender() {
-  const [selectedGender, setSelectedGender] = useState(null);
+  const [isGenderValid, setIsGenderValid] = useState(false);
 
-  const handleGenderSelection = (gender: any) => {
-    setSelectedGender(gender);
+  const { userGender, updateUserGender } = userDataStore((state) => ({
+    userGender: state.userGender,
+    updateUserGender: state.updateUserGender,
+  }));
+
+  const handleGenderSelection = (gender: string) => {
+    if (userGender === gender) {
+      updateUserGender(""); // Deselect if the same gender is clicked again
+    } else {
+      updateUserGender(gender); // Select the clicked gender
+    }
+    validateGender(gender);
   };
 
-  const isGenderSelected = selectedGender !== null;
+  const validateGender = (value: string) => {
+    try {
+      genderSchema.parse(value);
+      setIsGenderValid(true);
+    } catch (error) {
+      setIsGenderValid(false);
+    }
+  };
+
+  const isGenderSelected = userGender !== "";
 
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
@@ -33,26 +57,30 @@ export default function usergender() {
       <div className="flex justify-center mb-7">
         <GenderIcon />
       </div>
-      <div className="flex justify-center gap-4">
+      <div className="flex justify-center gap-4 mb-16">
         <Button
           name="male"
-          className={`bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white ${selectedGender === "male" ? "bg-neutral-10 text-white" : ""}`}
+          className={`bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white ${userGender === "male" ? "bg-neutral-10 text-white" : ""}`}
           onClick={() => handleGenderSelection("male")}>
           Male
         </Button>
         <Button
           name="female"
-          className={`bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white ${selectedGender === "female" ? "bg-neutral-10 text-white" : ""}`}
+          className={`bg-neutral-1 border border-neutral-10 text-neutral-10 w-full hover:text-white ${userGender === "female" ? "bg-neutral-10 text-white" : ""}`}
           onClick={() => handleGenderSelection("female")}>
           Female
         </Button>
       </div>
+
+      {/* {!isGenderValid && (
+        <p className="text-red mt-2">Please select a valid gender</p>
+      )} */}
       {!isGenderSelected ? (
-        <Button className="w-full mt-36" disabled>
-          <Link href="/newuser/user-city">Next</Link>
+        <Button className="w-full mt-72" disabled>
+          Next
         </Button>
       ) : (
-        <Button className="w-full mt-36" asChild>
+        <Button className="w-full mt-72" asChild>
           <Link href="/newuser/user-city">Next</Link>
         </Button>
       )}

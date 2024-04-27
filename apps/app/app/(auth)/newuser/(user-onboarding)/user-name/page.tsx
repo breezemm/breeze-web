@@ -1,19 +1,49 @@
 "use client";
 import AddMediaIcon from "@/app/assets/icons/AddMediaIcon";
 import CameraIcon from "@/app/assets/icons/CameraIcon";
+import { userDataStore } from "@/store/User-Data-Store";
 import { Button, Input } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useState } from "react";
+import { z } from "zod";
+
+// Define Zod schema for username validation
+const usernameSchema = z
+  .string()
+  .min(3, "Username must be at least 3 characters long");
 
 export default function userName() {
-  const [username, setUsername] = useState("");
+  const [isUserNameValid, setIsUserNameValid] = useState(false);
+  const {
+    updateUserName,
+    userNameFromStore,
+    userImageUrl,
+    updateUserImageUrl,
+  } = userDataStore((state) => ({
+    updateUserName: state.updateUserName,
+    userNameFromStore: state.userName,
+    userImageUrl: state.userImageUrl,
+    updateUserImageUrl: state.updateUserImageUrl,
+  }));
 
-  const handleUsernameChange = (event: any) => {
-    setUsername(event.target.value);
+  const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newUsername = event.target.value;
+    updateUserName(newUsername);
+    validateUsername(newUsername);
   };
 
-  const isUserNameValid = username !== "";
+  const handleUserImageChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const newUserImageUrl = event.target.value;
+    updateUserImageUrl(newUserImageUrl);
+  };
+
+  const validateUsername = (value: string) => {
+    const validationResult = usernameSchema.safeParse(value);
+    setIsUserNameValid(validationResult.success);
+  };
 
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
@@ -37,23 +67,31 @@ export default function userName() {
           <CameraIcon />
 
           <AddMediaIcon className="absolute bottom-0 right-0  mr-3 rounded-full w-7 h-7" />
-          <input type="file" name="file_upload" className="hidden" />
+          <input
+            type="file"
+            name="file_upload"
+            className="hidden"
+            onChange={handleUserImageChange}
+          />
         </span>
       </label>
       <Input
         placeholder="Username"
         type="text"
         name="username"
-        value={username}
+        value={userNameFromStore}
         onChange={handleUsernameChange}
-        className="mb-32 mt-5"
+        className={`mt-5 ${!isUserNameValid ? "border-red" : ""}`}
       />
+      {/* {!isUserNameValid && (
+        <p className="text-red">Username must be at least 3 characters long</p>
+      )} */}
       {isUserNameValid ? (
-        <Button className="w-full" asChild>
+        <Button className="w-full mt-72" asChild>
           <Link href="/newuser/user-birth">Next</Link>
         </Button>
       ) : (
-        <Button className="w-full" disabled>
+        <Button className="w-full mt-72" disabled>
           Next
         </Button>
       )}

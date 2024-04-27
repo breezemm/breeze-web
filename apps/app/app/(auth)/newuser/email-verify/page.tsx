@@ -1,18 +1,32 @@
 "use client";
 
+import { userDataStore } from "@/store/User-Data-Store";
 import { Button, Input } from "@breeze/ui";
 import { ChevronLeftIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
+import { z } from "zod";
+
+// Define Zod schema for verification code validation
+const verificationCodeSchema = z
+  .string()
+  .length(6, "Verification code must be 6 digits");
 
 export default function emailverify() {
-  const [emailVerify, setemailVerify] = useState("");
+  const { newUserEmailVerify, updateUserEmailVerify } = userDataStore(
+    (state) => ({
+      newUserEmailVerify: state.emailVerify,
+      updateUserEmailVerify: state.updateUserEmailVerify,
+    })
+  );
 
-  const handleEmailVerifyChange = (event: any) => {
-    setemailVerify(event.target.value);
+  const handleEmailVerifyChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    updateUserEmailVerify(event.target.value);
   };
 
-  const isEmailVerifyValid = emailVerify !== "";
+  const isDisabledButton = newUserEmailVerify.length !== 6;
   return (
     <div className="mx-auto px-4 max-w-md mt-10">
       <Button size="icon" className="bg-neutral-10 rounded-full mb-5" asChild>
@@ -29,18 +43,18 @@ export default function emailverify() {
       </p>
       <Input
         placeholder="E.g. 123456"
-        className="mb-48"
+        className="mb-44"
         type="text"
-        value={emailVerify}
+        value={newUserEmailVerify}
         onChange={handleEmailVerifyChange}
       />
-      {isEmailVerifyValid ? (
-        <Button className="w-full" asChild>
+      {isDisabledButton ? (
+        <Button className="w-full mt-60" disabled>
           <Link href="/newuser/password">Next</Link>
         </Button>
       ) : (
-        <Button className="w-full" disabled>
-          Next
+        <Button className="w-full mt-60" asChild>
+          <Link href="/newuser/password">Next</Link>
         </Button>
       )}
     </div>
