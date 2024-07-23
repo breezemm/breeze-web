@@ -9,6 +9,7 @@ export * from "./form";
 export * from "./datePicker";
 export * from "./input";
 export * from "./profileForm";
+export * from "./label";
 
 export * from "./accordion";
 export * from "./alert-dialog";
@@ -27,3 +28,9 @@ export * from "./progress";
 export * from "./breadcrumb";
 export * from "./table";
 export * from "./switch";
+
+//Form Components
+export * from "./form-components/form-input";
+export * from "./combobox";
+export * from "./form-components/form-date";
+export * from "./form-components/form-textarea";

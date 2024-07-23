@@ -13,6 +13,8 @@ const config: Config = {
       primary: "#323334",
       neutral: {
         1: "#FCFCFC",
+        2: "#97999B",
+        3: "#E5E6E6",
         7: "#646668",
         9: "#323334",
         10: "#191A1A",
